@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/liuernan/erUI/issues"
   },
-  "homepage": "https://github.com/liuernan/erUI#readme"
+  "homepage": "https://github.com/liuernan/erUI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
