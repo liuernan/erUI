@@ -1,5 +1,5 @@
 Vue.component('er-button', {
   template: `
-    <button>button</button>
+    <button><slot>button</slot></button>
   `
 });
