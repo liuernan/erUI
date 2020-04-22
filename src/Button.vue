@@ -1,5 +1,5 @@
 <template>
-  <button class="er-button"><slot>button</slot></button>
+  <button class="er-button"><slot>defaultText</slot></button>
 </template>
 <script>
   export default {
