@@ -1,20 +1,27 @@
 <!doctype html>
 <html lang="zh-Hans">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>erUI</title>
 </head>
+
 <body>
   <div id="app">
-    <er-button></er-button>
+    <er-button>按钮</er-button>
   </div>
 </body>
 <style>
   /* box-sizing: border-box; IE 8 以上兼容 */
-  * {margin: 0; padding: 0; box-sizing: border-box;}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   /* root/html/.er-button CSS 的兼容性问题： caniuse.com */
   :root {
     --button-height: 32px;
@@ -26,12 +33,15 @@
     --border-color: #999;
     --border-color-hover: #666;
   }
+
   #app {
     margin: 20px;
   }
+
   body {
     font-size: var(--font-size);
   }
 </style>
 <script src="./src/app.js"></script>
+
 </html>
