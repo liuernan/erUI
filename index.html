@@ -11,11 +11,13 @@
 
 <body>
   <div id="app">
-    <er-button>按钮</er-button>
+    <er-button>
+      <svg class="icon">
+        <use xlink:href="#icon-upload"></use>
+      </svg>
+      按钮
+    </er-button>
   </div>
-  <svg>
-    <use xlink:href="#icon-upload"></use>
-  </svg>
 </body>
 <style>
   /* box-sizing: border-box; IE 8 以上兼容 */
@@ -43,6 +45,11 @@
 
   body {
     font-size: var(--font-size);
+  }
+
+  .icon {
+    width: 1em;
+    height: 1em;
   }
 </style>
 <script src="//at.alicdn.com/t/font_257057_9befwojds45.js"></script>
