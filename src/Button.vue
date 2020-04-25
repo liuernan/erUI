@@ -1,4 +1,5 @@
 <template>
+<!-- todo: er-button-icon-${iconPosition} 传了 icon 才添加，不传不额外增加这个 class -->
   <button class="er-button" :class="{[`er-button-icon-${iconPosition}`]: true}">
     <er-icon class="er-button-icon" :icon="icon"></er-icon>
     <div class="er-button-content">
