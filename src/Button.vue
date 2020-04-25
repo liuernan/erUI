@@ -1,7 +1,7 @@
 <template>
-  <button class="er-button" :class="{[`icon-${iconPosition}`]: true}">
-    <er-icon class="icon" :icon="icon"></er-icon>
-    <div class="content">
+  <button class="er-button" :class="{[`er-button-icon-${iconPosition}`]: true}">
+    <er-icon class="er-button-icon" :icon="icon"></er-icon>
+    <div class="er-button-content">
       <slot></slot>
     </div>
   </button>
@@ -45,23 +45,23 @@
       outline: none;
     }
 
-    > .icon {
+    > .er-button-icon {
       order: 1;
       margin-right: .2em;
     }
 
-    > .content {
+    > .er-button-content {
       order: 2;
     }
 
-    &.icon-right {
-      > .icon {
+    &.er-button-icon-right {
+      > .er-button-icon {
         order: 2;
         margin-right: 0;
         margin-left: .2em;
       }
 
-      > .content {
+      > .er-button-content {
         order: 1;
       }
     }

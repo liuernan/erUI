@@ -1,5 +1,5 @@
 <template>
-  <svg v-if="icon" class="icon">
+  <svg v-if="icon" class="er-icon">
     <use :xlink:href="`#icon-${icon}`"/>
   </svg>
 </template>
@@ -9,7 +9,7 @@
   }
 </script>
 <style>
-  .icon {
+  .er-icon {
     width: 1em;
     height: 1em;
   }
