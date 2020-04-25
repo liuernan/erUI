@@ -1,10 +1,15 @@
 <template>
   <button class="er-button">
+    <svg class="icon">
+      <use v-bind:xlink:href="`#icon-${icon}`" />
+    </svg>
     <slot></slot>
   </button>
 </template>
 <script>
-export default {};
+export default {
+  props: ["icon"]
+};
 </script>
 <style lang="scss">
 .er-button {
