@@ -11,11 +11,15 @@
 
 <body>
 <div id="app">
-  <er-button icon="">按钮</er-button>
-  <er-button icon="upload">上传</er-button>
-  <er-button icon="download">下载</er-button>
-  <er-button icon="left">上一步</er-button>
-  <er-button icon="right">下一步</er-button>
+  <er-button>按钮</er-button>
+  <div>
+    <er-button icon="upload">上传</er-button>
+    <er-button icon="download" icon-position="right">下载</er-button>
+  </div>
+  <div>
+    <er-button icon="left" icon-position="left">上一步</er-button>
+    <er-button icon="right" icon-position="right">下一步</er-button>
+  </div>
   <er-button icon="settings">加载中</er-button>
 </div>
 </body>
