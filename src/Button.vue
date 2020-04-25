@@ -1,7 +1,7 @@
 <template>
 <!-- todo: er-button-icon-${iconPosition} 传了 icon 才添加，不传不额外增加这个 class -->
   <button class="er-button" :class="{[`er-button-icon-${iconPosition}`]: true}">
-    <er-icon class="er-button-icon" :icon="icon"></er-icon>
+    <er-icon v-if="icon" class="er-button-icon" :icon="icon"></er-icon>
     <div class="er-button-content">
       <slot></slot>
     </div>
@@ -10,7 +10,9 @@
 <script>
   export default {
     props: {
-      icon: {},
+      icon: {
+        type: String
+      },
       iconPosition: {
         type: String,
         default: 'left',
