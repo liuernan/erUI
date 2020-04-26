@@ -4,7 +4,15 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    mounted() {
+      for (let element of this.$el.children) {
+        if ("button" !== element.localName) {
+          console.warn("er-button-group 组件里面应该只有 er-button，你写了一个 " + element.localName)
+        }
+      }
+    }
+  }
 </script>
 <style lang="scss">
   .er-button-group {
