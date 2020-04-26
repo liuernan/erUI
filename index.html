@@ -11,10 +11,11 @@
 
 <body>
 <div id="app">
-  <er-button>按钮</er-button>
+  <er-button >按钮</er-button>
+  <er-button :loading=loading1 @click="loading1 = !loading1">按钮</er-button>
   <div>
-    <er-button icon="upload">上传</er-button>
-    <er-button icon="download" icon-position="right">下载</er-button>
+    <er-button icon="upload" :loading=loading1 @click="loading1 = !loading1">上传</er-button>
+    <er-button icon="download" icon-position="right" :loading=loading2 @click="loading2 = !loading2">下载</er-button>
   </div>
   <div>
     <er-button icon="left" icon-position="left">上一步</er-button>

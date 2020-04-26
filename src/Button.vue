@@ -1,8 +1,8 @@
 <template>
-<!-- todo: er-button-icon-${iconPosition} 传了 icon 才添加，不传不额外增加这个 class -->
-  <button class="er-button" :class="{[`er-button-icon-${iconPosition}`]: true}">
-    <er-icon v-if="icon" class="er-button-icon" :name="icon"></er-icon>
-    <er-icon class="er-button-icon" icon="loading"></er-icon>
+  <!-- todo: er-button-icon-${iconPosition} 传了 icon 才添加，不传不额外增加这个 class -->
+  <button class="er-button" :class="{[`er-button-icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <er-icon v-if="icon && !loading" class="er-button-icon" :name=icon></er-icon>
+    <er-icon class="er-button-icon loading" v-if="loading" name="loading"></er-icon>
     <div class="er-button-content">
       <slot></slot>
     </div>
@@ -13,6 +13,10 @@
     props: {
       icon: {
         type: String
+      },
+      loading: {
+        type: Boolean,
+        default: false
       },
       iconPosition: {
         type: String,
@@ -25,6 +29,15 @@
   };
 </script>
 <style lang="scss">
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .er-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -68,6 +81,10 @@
       > .er-button-content {
         order: 1;
       }
+    }
+
+    .loading {
+      animation: spin 1s infinite linear;
     }
   }
 </style>
