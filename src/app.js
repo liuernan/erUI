@@ -13,3 +13,12 @@ new Vue({
     loading2: false
   }
 });
+
+// 单元测试
+import chai from "chai";
+
+const expect = chai.expect;
+
+{
+  expect(1).to.equal(1);
+}
