@@ -1,11 +1,11 @@
 <template>
   <svg class="er-icon">
-    <use :xlink:href="`#icon-${icon}`"/>
+    <use :xlink:href="`#icon-${name}`"/>
   </svg>
 </template>
 <script>
   export default {
-    props: ["icon"]
+    props: ["name"]
   }
 </script>
 <style>
