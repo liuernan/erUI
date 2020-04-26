@@ -11,7 +11,7 @@
 
 <body>
 <div id="app">
-  <er-button >按钮</er-button>
+  <er-button>按钮</er-button>
   <er-button :loading=loading1 @click="loading1 = !loading1">按钮</er-button>
   <div>
     <er-button icon="upload" :loading=loading1 @click="loading1 = !loading1">上传</er-button>
@@ -22,7 +22,17 @@
     <er-button icon="right" icon-position="right">下一步</er-button>
   </div>
   <er-button icon="settings">设置</er-button>
-  <er-icon name="loading"></er-icon>
+  <er-button icon="left" icon-position="left">上一步</er-button>
+  <er-button icon="right" icon-position="right">下一步</er-button>
+  <er-button-group>
+    <er-button icon="left" icon-position="left">上一步</er-button>
+    <er-button icon="right" icon-position="right">下一步</er-button>
+  </er-button-group>
+  <er-button-group>
+    <er-button icon="left" icon-position="left">上一步</er-button>
+    <er-button>更多</er-button>
+    <er-button icon="right" icon-position="right">下一步</er-button>
+  </er-button-group>
 </div>
 </body>
 <style>

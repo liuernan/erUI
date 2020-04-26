@@ -8,7 +8,7 @@
     props: ["name"]
   }
 </script>
-<style>
+<style lang="scss">
   .er-icon {
     width: 1em;
     height: 1em;
