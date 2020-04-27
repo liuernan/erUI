@@ -17,6 +17,9 @@ new Vue({
 
 // 单元测试
 import chai from "chai";
+import spies from "chai-spies";
+
+chai.use(spies);
 
 const expect = chai.expect;
 
@@ -29,38 +32,38 @@ const expect = chai.expect;
 { // 参数测试：icon
   const iconName = "settings";
 
-  const vm = Vue.extend(Button),
-        button = new vm({
-    propsData: {
-      icon: iconName
-    }
-  });
+  const vueConstructor = Vue.extend(Button),
+    vm = new vueConstructor({
+      propsData: {
+        icon: iconName
+      }
+    });
 
-  button.$mount();
+  vm.$mount();
 
-  const useElement = button.$el.querySelector("use");
+  const useElement = vm.$el.querySelector("use");
 
   expect(useElement.getAttribute("xlink:href")).to.equal(`#icon-${iconName}`);
 
-  button.$el.remove();
-  button.$destroy();
+  vm.$el.remove();
+  vm.$destroy();
 }
 
 { // 参数测试：loading
   const iconName = "settings",
-        loadingStatus = Math.random() < 0.5;
+    loadingStatus = Math.random() < 0.5;
 
-  const vm = Vue.extend(Button),
-        button = new vm({
-    propsData: {
-      icon: iconName,
-      loading: loadingStatus
-    }
-  });
+  const vueConstructor = Vue.extend(Button),
+    vm = new vueConstructor({
+      propsData: {
+        icon: iconName,
+        loading: loadingStatus
+      }
+    });
 
-  button.$mount();
+  vm.$mount();
 
-  const useElement = button.$el.querySelector("use");
+  const useElement = vm.$el.querySelector("use");
 
   if (loadingStatus) {
     expect(useElement.getAttribute("xlink:href")).to.equal("#icon-loading");
@@ -68,8 +71,8 @@ const expect = chai.expect;
     expect(useElement.getAttribute("xlink:href")).to.equal(`#icon-${iconName}`);
   }
 
-  button.$el.remove();
-  button.$destroy();
+  vm.$el.remove();
+  vm.$destroy();
 }
 
 { // 参数测试：icon-position 不传
@@ -78,21 +81,21 @@ const expect = chai.expect;
 
   const iconName = "settings";
 
-  const vm = Vue.extend(Button),
-    button = new vm({
+  const vueConstructor = Vue.extend(Button),
+    vm = new vueConstructor({
       propsData: {
         icon: iconName
       }
     });
 
-  button.$mount(div);
+  vm.$mount(div);
 
-  const $svg = button.$el.querySelector("svg");
+  const $svg = vm.$el.querySelector("svg");
 
   expect(window.getComputedStyle($svg).order).to.equal("1");
 
-  button.$el.remove();
-  button.$destroy();
+  vm.$el.remove();
+  vm.$destroy();
 }
 
 { // 参数测试：icon-position
@@ -100,46 +103,47 @@ const expect = chai.expect;
   document.querySelector("#app").appendChild(div);
 
   const iconName = "settings",
-        iconPosition = "right";
+    iconPosition = "right";
 
-  const vm = Vue.extend(Button),
-    button = new vm({
+  const vueConstructor = Vue.extend(Button),
+    vm = new vueConstructor({
       propsData: {
         icon: iconName,
         iconPosition: iconPosition
       }
     });
 
-  button.$mount(div);
+  vm.$mount(div);
 
-  const $svg = button.$el.querySelector("svg");
+  const $svg = vm.$el.querySelector("svg");
 
   expect(window.getComputedStyle($svg).order).to.equal("2");
 
-  button.$el.remove();
-  button.$destroy();
+  vm.$el.remove();
+  vm.$destroy();
 }
 
-{ // 监听测试：click
+{ // 用 chai-spies 监听测试 click
   const iconName = "settings",
     iconPosition = "right";
 
-  const vm = Vue.extend(Button),
-    erButton = new vm({
+  const vueConstructor = Vue.extend(Button),
+    vm = new vueConstructor({
       propsData: {
         icon: iconName,
         iconPosition: iconPosition
       }
     });
 
-  erButton.$mount();
-  erButton.$on("click", () => {
-    console.log(1)
-  });
+  vm.$mount();
 
-  const button = erButton.$el;
-  button.click();
+  const spy = chai.spy(() => {});
+  vm.$on("click", spy);
 
-  erButton.$el.remove();
-  erButton.$destroy();
+  vm.$el.click();
+
+  expect(spy).to.have.been.called.exactly(1);
+
+  vm.$el.remove();
+  vm.$destroy();
 }
