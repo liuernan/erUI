@@ -1,7 +1,7 @@
 import Vue from "vue";
-import Button from "./Button.vue";
-import ButtonGroup from "./ButtonGroup";
-import Icon from "./Icon.vue";
+import Button from "./button.vue";
+import ButtonGroup from "./button-group";
+import Icon from "./icon.vue";
 
 Vue.component("er-button", Button);
 Vue.component("er-icon", Icon);

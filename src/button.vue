@@ -9,7 +9,7 @@
   </button>
 </template>
 <script>
-  import Icon from "./Icon";
+  import Icon from "./icon";
   export default {
     components: {
       "er-icon": Icon
