@@ -1,10 +1,13 @@
 # er-ui-demo
 
+[![Build Status](https://travis-ci.org/liuernan/erUI.svg?branch=master)](https://travis-ci.org/liuernan/erUI)
+
 ## 介绍
 
   这是一个基于 Vue 的 UI 框架，我拿来练手的，现在刚起步还非常非常的挫。^_^
 
 ## 使用指南
+
   * 很挫的第一步：使用本框架前，请先在你的项目中添加下面的 CSS
   
   ```CSS
@@ -66,7 +69,6 @@
 ## 贡献代码
 
 ## 许可协议
-
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2019-present, 刘二男
