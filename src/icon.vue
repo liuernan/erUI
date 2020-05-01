@@ -5,6 +5,7 @@
 </template>
 <script>
   export default {
+    name: 'er-icon',
     props: ["name"]
   }
 </script>

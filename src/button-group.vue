@@ -5,6 +5,7 @@
 </template>
 <script>
   export default {
+    name: 'er-button-group',
     mounted() {
       for (let element of this.$el.children) {
         if ("button" !== element.localName) {
