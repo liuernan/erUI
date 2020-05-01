@@ -11,7 +11,7 @@
 <script>
   import Icon from "./icon";
   export default {
-    name: 'er-icon',
+    name: 'er-button',
     components: {
       "er-icon": Icon
     },
