@@ -14,7 +14,7 @@
     }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .er-button-group {
     display: inline-flex;
     vertical-align: middle;
