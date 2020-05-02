@@ -1,11 +1,46 @@
 <template>
-  <div class="warpper">
-    <input type="text"/>
+  <div class="warpper" :class="error">
+    <input type="text" :value="value" :disabled="disabled" :readonly="readonly"/>
+    <template v-if="error">
+      <er-icon name="error" class="error-icon"></er-icon>
+      <span class="error-message">{{error}}</span>
+    </template>
+    <template v-if="tips">
+      <er-icon name="tips" class="tips-icon"></er-icon>
+      <span class="tips-message">{{tips}}</span>
+    </template>
   </div>
 </template>
 <script>
+  import Icon from './icon'
+
   export default {
-    name: 'er-ui-input'
+    name: 'er-ui-input',
+    components: {
+      'er-icon': Icon
+    },
+    props: {
+      value: {
+        type: String,
+        default: ''
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      error: {
+        type: String,
+        default: ''
+      },
+      tips: {
+        type: String,
+        default: ''
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -13,8 +48,13 @@
   $border-color: #999;
   $border-color-hover: #666;
   $box-shadow-color: rgba(0, 0, 0, .5);
+  $error-color: #F1453D;
+  $tips-color: lightgreen;
 
   .warpper {
+    display: inline-flex;
+    align-items: center;
+
     > input {
       height: $height;
       border: 1px solid $border-color;
@@ -30,6 +70,46 @@
         outline: none;
         box-shadow: inset 0 1px 2px $box-shadow-color;
       }
+
+      &[disabled],
+      &[readonly] {
+        border-color: #bbb;
+        color: #bbb;
+        cursor: not-allowed;
+      }
     }
+
+    .error {
+      > input {
+        border-color: $error-color;
+      }
+    }
+
+    .error-icon {
+      fill: $error-color;
+    }
+
+    .error-message {
+      color: $error-color;
+    }
+
+    :not(:last-child) {
+      margin-right: .2em;
+    }
+
+    .tips {
+      > input {
+        border-color: $tips-color;
+      }
+    }
+
+    .tips-icon {
+      fill: $tips-color;
+    }
+
+    .tips-message {
+      color: $tips-color;
+    }
+
   }
 </style>
