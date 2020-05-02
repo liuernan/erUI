@@ -14,5 +14,10 @@ new Vue({
   data: {
     loading1: true,
     loading2: false
+  },
+  methods: {
+    clickInput(e) {
+      console.log(e);
+    }
   }
 });

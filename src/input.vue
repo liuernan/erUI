@@ -1,6 +1,7 @@
 <template>
   <div class="warpper" :class="error">
-    <input type="text" :value="value" :disabled="disabled" :readonly="readonly"/>
+    <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
+           @click="$emit('click', $event)"/>
     <template v-if="error">
       <er-icon name="error" class="error-icon"></er-icon>
       <span class="error-message">{{error}}</span>
