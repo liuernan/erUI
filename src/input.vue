@@ -6,7 +6,7 @@
       <er-icon name="error" class="error-icon"></er-icon>
       <span class="error-message">{{error}}</span>
     </template>
-    <template v-if="tips">
+    <template v-else-if="tips">
       <er-icon name="tips" class="tips-icon"></er-icon>
       <span class="tips-message">{{tips}}</span>
     </template>

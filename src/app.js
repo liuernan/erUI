@@ -16,8 +16,9 @@ new Vue({
     loading2: false
   },
   methods: {
-    clickInput(e) {
+    clickInput(e, args) {
       console.log(e);
+      console.log(args);
     }
   }
 });
