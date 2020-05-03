@@ -82,4 +82,30 @@ describe('Input', () => {
     });
   });
 
+  describe('监听', () => {
+    const Constructor = Vue.extend(Input);
+    let vm;
+
+    afterEach(() => {
+      vm.$destroy();
+    });
+
+    it('事件', () => {
+      ['click', 'focus', 'input', 'blur', 'change']
+        .forEach((eventName) => {
+          vm = new Constructor({}).$mount();
+
+          const spy = sinon.fake();
+          vm.$on(eventName, spy);
+
+          //触发input的change 事件
+          let event = new Event(eventName);
+          let $input = vm.$el.querySelector('input');
+          $input.dispatchEvent(event);
+          
+          expect(spy).to.have.been.callCount(1);
+        });
+    });
+  });
+
 });
