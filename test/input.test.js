@@ -22,5 +22,6 @@ describe('Input', () => {
     const inputElement = vm.$el.querySelector('input');
 
     expect(inputElement.value).to.equals('我是文本');
+    vm.$destroy();
   });
 });
