@@ -3,7 +3,7 @@
     <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
            @click="$emit('click', $event)"
            @focus="$emit('focus', $event)"
-           @input="$emit('input', $event)"
+           @input="$emit('input', $event.target.value)"
            @change="$emit('change', $event)"
            @blur="$emit('blur', $event)"
 
