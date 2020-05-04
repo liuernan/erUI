@@ -101,9 +101,16 @@ describe('Input', () => {
           //触发input的change 事件
           let event = new Event(eventName);
           let $input = vm.$el.querySelector('input');
+
+          Object.defineProperty(event, 'target', {
+            value: {value: 'hello, callback!'},
+            enumerable: true
+          });
+
           $input.dispatchEvent(event);
-          
-          expect(spy).to.have.been.callCount(1);
+
+          // expect(spy).to.have.been.callCount(1);
+          expect(spy).to.have.been.calledWith('hello, callback!');
         });
     });
   });

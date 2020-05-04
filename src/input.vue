@@ -1,11 +1,11 @@
 <template>
   <div class="warpper" :class="error">
     <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
-           @click="$emit('click', $event)"
-           @focus="$emit('focus', $event)"
+           @click="$emit('click', $event.target.value)"
+           @focus="$emit('focus', $event.target.value)"
            @input="$emit('input', $event.target.value)"
-           @change="$emit('change', $event)"
-           @blur="$emit('blur', $event)"
+           @change="$emit('change', $event.target.value)"
+           @blur="$emit('blur', $event.target.value)"
 
     />
     <template v-if="error">
