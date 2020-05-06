@@ -9,7 +9,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  .row{
+  .row {
     display: flex;
   }
 </style>
