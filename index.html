@@ -12,6 +12,57 @@
 <body>
 <div id="app">
   <div class="buxiangqimingzi">
+    <er-row>
+      <er-col>12</er-col>
+      <er-col>12</er-col>
+    </er-row>
+    <er-row>
+      <er-col>8</er-col>
+      <er-col>8</er-col>
+      <er-col>8</er-col>
+    </er-row>
+    <er-row>
+      <er-col>6</er-col>
+      <er-col>6</er-col>
+      <er-col>6</er-col>
+      <er-col>6</er-col>
+    </er-row>
+    <er-row>
+      <er-col>1</er-col>
+      <er-col>2</er-col>
+      <er-col>3</er-col>
+      <er-col>4</er-col>
+      <er-col>5</er-col>
+    </er-row>
+    <er-row>
+      <er-col>1</er-col>
+      <er-col>2</er-col>
+      <er-col>3</er-col>
+      <er-col>4</er-col>
+      <er-col>5</er-col>
+      <er-col>6</er-col>
+      <er-col>1</er-col>
+      <er-col>2</er-col>
+      <er-col>3</er-col>
+      <er-col>4</er-col>
+      <er-col>5</er-col>
+      <er-col>6</er-col>
+      <er-col>1</er-col>
+      <er-col>2</er-col>
+      <er-col>3</er-col>
+      <er-col>4</er-col>
+      <er-col>5</er-col>
+      <er-col>6</er-col>
+      <er-col>1</er-col>
+      <er-col>2</er-col>
+      <er-col>3</er-col>
+      <er-col>4</er-col>
+      <er-col>5</er-col>
+      <er-col>6</er-col>
+    </er-row>
+  </div>
+
+  <div class="buxiangqimingzi">
     <er-button icon="upload" :loading=loading1 @click="loading1 = !loading1">上传</er-button>
     <er-button icon="download" icon-position="right" :loading=loading2 @click="loading2 = !loading2">下载</er-button>
   </div>
@@ -41,7 +92,7 @@
 
   <div class="buxiangqimingzi">
     <input type="text">
-    <input :value="message" @input="message = $event.target.value" ></input>
+    <input :value="message" @input="message = $event.target.value"></input>
     <er-input v-model="message"></er-input>
     <p>{{ message }}</p>
     <er-input value="我被 disabled" disabled></er-input>
