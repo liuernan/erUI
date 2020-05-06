@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="[span && `col-${span}`]">
+  <div class="col" :class="[span && `col-${span}`, offset && `offset-${offset}`]">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,9 @@
     name: 'erCol',
     props: {
       span: {
+        type: [Number, String]
+      },
+      offset: {
         type: [Number, String]
       }
     }
@@ -23,6 +26,9 @@
     @for $n from 1 through 24 {
       &.col-#{$n} {
         width: ($n / 24) * 100%;
+      }
+      &.offset-#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
     }
   }
