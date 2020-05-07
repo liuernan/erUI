@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="{marginLeft: -gutter/2 + 'px', marginRight: -gutter/2 + 'px'}">
+  <div class="row" :style="styleList">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,15 @@
       gutter: {
         type: [Number, String],
         default: 0
+      }
+    },
+    computed: {
+      styleList() {
+        const {gutter} = this;
+        return {
+          marginLeft: -gutter / 2 + 'px',
+          marginRight: -gutter / 2 + 'px'
+        }
       }
     },
     mounted() {

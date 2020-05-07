@@ -1,8 +1,5 @@
 <template>
-  <div class="col"
-       :class="[span && `col-${span}`, offset && `offset-${offset}`]"
-       :style="{paddingLeft: gutter/2 + 'px', paddingRight: gutter/2 + 'px'}"
-  >
+  <div class="col" :class="classList" :style="styleList">
     <slot></slot>
   </div>
 </template>
@@ -20,6 +17,22 @@
     data() {
       return {
         gutter: 0
+      }
+    },
+    computed: {
+      classList() {
+        const {span, offset} = this;
+        return [
+          span && `col-${span}`,
+          offset && `offset-${offset}`
+        ]
+      },
+      styleList() {
+        const {gutter} = this;
+        return {
+          paddingLeft: gutter / 2 + 'px',
+          paddingRight: gutter / 2 + 'px'
+        }
       }
     }
   }
