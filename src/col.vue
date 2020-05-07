@@ -39,11 +39,6 @@
 </script>
 <style lang="scss" scoped>
   .col {
-    height: 100px;
-    width: 50%;
-    background-color: pink;
-    border: 1px dotted grey;
-
     @for $n from 1 through 24 {
       &.col-#{$n} {
         width: ($n / 24) * 100%;
