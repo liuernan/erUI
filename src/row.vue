@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="styleList">
+  <div class="row" :class="classList" :style="styleList">
     <slot></slot>
   </div>
 </template>
@@ -10,9 +10,21 @@
       gutter: {
         type: [Number, String],
         default: 0
+      },
+      align: {
+        type: String,
+        validator(value) {
+          return ['left', 'center', 'right'].includes(value);
+        }
       }
     },
     computed: {
+      classList() {
+        const {align} = this;
+        return [
+          align && `align-${align}`
+        ]
+      },
       styleList() {
         const {gutter} = this;
         return {
@@ -31,5 +43,17 @@
 <style lang="scss" scoped>
   .row {
     display: flex;
+
+    &.align-left {
+      justify-content: flex-start;
+    }
+
+    &.align-center {
+      justify-content: center;
+    }
+
+    &.align-right {
+      justify-content: flex-end;
+    }
   }
 </style>
