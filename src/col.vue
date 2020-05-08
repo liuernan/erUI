@@ -14,7 +14,19 @@
         type: [Number, String]
       },
       phone: {
-        type: Object
+        type: Object,
+        validator(obj) {
+          const keys = Object.keys(obj);
+          let validFlag = true;
+
+          keys.forEach((key) => {
+            if (!['span', 'offset'].includes(key)) {
+              validFlag = false;
+            }
+          });
+
+          return validFlag;
+        }
       }
     },
     data() {
