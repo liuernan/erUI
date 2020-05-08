@@ -26,10 +26,6 @@
       offset: {
         type: [Number, String]
       },
-      phone: {
-        type: Object,
-        validator: checkResponsiveParams
-      },
       ipad: {
         type: Object,
         validator: checkResponsiveParams
@@ -58,7 +54,6 @@
         return [
           span && `col-${span}`,
           offset && `offset-${offset}`,
-          phone && this.createClasses(phone, 'phone'),
           ipad && this.createClasses(ipad, 'ipad'),
           narrowPc && this.createClasses(narrowPc, 'narrowPc'),
           pc && this.createClasses(pc, 'pc'),
@@ -93,17 +88,6 @@
       }
       &.offset-#{$n} {
         margin-left: ($n / 24) * 100%;
-      }
-    }
-
-    @media (max-width: 576px) {
-      @for $n from 1 through 24 {
-        &.col-phone-#{$n} {
-          width: ($n / 24) * 100%;
-        }
-        &.offset-phone-#{$n} {
-          margin-left: ($n / 24) * 100%;
-        }
       }
     }
 
