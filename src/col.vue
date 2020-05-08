@@ -12,6 +12,9 @@
       },
       offset: {
         type: [Number, String]
+      },
+      phone: {
+        type: Object
       }
     },
     data() {
@@ -21,10 +24,12 @@
     },
     computed: {
       classList() {
-        const {span, offset} = this;
+        const {span, offset, phone} = this;
         return [
           span && `col-${span}`,
-          offset && `offset-${offset}`
+          offset && `offset-${offset}`,
+          phone && phone.span && `col-phone-${phone.span}`,
+          phone && phone.offset && `offset-phone-${phone.offset}`
         ]
       },
       styleList() {
@@ -45,6 +50,17 @@
       }
       &.offset-#{$n} {
         margin-left: ($n / 24) * 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      @for $n from 1 through 24 {
+        &.col-phone-#{$n} {
+          width: ($n / 24) * 100%;
+        }
+        &.offset-phone-#{$n} {
+          margin-left: ($n / 24) * 100%;
+        }
       }
     }
   }

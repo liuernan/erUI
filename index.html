@@ -10,8 +10,27 @@
 </head>
 
 <body>
+<style>
+  .reactive {
+    height: 100px;
+    background-color: pink;
+    border: 1px dotted grey;
+  }
+</style>
 <div id="app">
-  <div>
+  <div class="buxiangqimingzi">
+    <er-row>
+      <er-col class="reactive"
+              :span="2"
+              :phone="{span: 24}"
+      ></er-col>
+      <er-col class="reactive"
+              :span="22"
+              :phone="{span: 24}"
+      ></er-col>
+    </er-row>
+  </div>
+  <div class="buxiangqimingzi">
     <er-row>
       <er-col :span="6">
         <er-row :align="`center`">
