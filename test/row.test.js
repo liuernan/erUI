@@ -31,11 +31,12 @@ describe('Row', () => {
       });
 
       setTimeout(() => {
-        const $row = document.querySelector('.row');
-        const $cols = document.getElementsByClassName('col');
+        const $row = vm.$el.querySelector('.row');
+        const $cols = vm.$el.getElementsByClassName('col');
 
         expect(getComputedStyle($row).marginLeft).to.be.equal('-10px');
-        expect(getComputedStyle($cols[0]).paddingLeft === '10px').to.ok;
+        expect(getComputedStyle($cols[0]).paddingRight === '10px').to.ok;
+        expect(getComputedStyle($cols[1]).paddingLeft === '10px').to.ok;
 
         div.remove();
         vm.$destroy();
