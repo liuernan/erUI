@@ -3,5 +3,9 @@
     <slot></slot>
   </div>
 </template>
-<script></script>
+<script>
+  export default {
+    name: 'ErHeader'
+  }
+</script>
 <style lang="scss" scoped></style>
