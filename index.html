@@ -10,14 +10,21 @@
 </head>
 
 <body>
-<style>
-  .reactive {
-    height: 100px;
-    background-color: pink;
-    border: 1px dotted grey;
-  }
-</style>
 <div id="app">
+  <er-layout>
+    <er-header>header</er-header>
+    <er-content>content</er-content>
+    <er-footer>footer</er-footer>
+  </er-layout>
+  <er-layout>
+    <er-header>header</er-header>
+    <er-layout>
+      <er-sider>sider</er-sider>
+      <er-content>content</er-content>
+    </er-layout>
+    <er-footer>footer</er-footer>
+  </er-layout>
+
   <div class="buxiangqimingzi">
     <er-row>
       <er-col class="reactive"
@@ -166,6 +173,13 @@
   body {
     font-size: var(--font-size);
   }
+
+  .reactive {
+    height: 100px;
+    background-color: pink;
+    border: 1px dotted grey;
+  }
+
 </style>
 <script src="//at.alicdn.com/t/font_257057_l6hm7mi02af.js"></script>
 <script src="./src/app.js"></script>
