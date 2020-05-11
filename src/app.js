@@ -35,9 +35,19 @@ new Vue({
     message: '支持双向绑定'
   },
   methods: {
-    testToast() {
+    testToastTop() {
+      this.testToast('top');
+    },
+    testToastMiddle() {
+      this.testToast('middle');
+    },
+    testToastBottom() {
+      this.testToast('bottom');
+    },
+    testToast(position) {
       this.$toast('我是一个 toast', {
-        autoClose: 5
+        autoClose: 50,
+        position: position
       })
     }
   }
