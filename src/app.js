@@ -36,7 +36,9 @@ new Vue({
   },
   methods: {
     testToast() {
-      this.$toast('我是一个 toast')
+      this.$toast('我是一个 toast', {
+        autoClose: 5
+      })
     }
   }
 });

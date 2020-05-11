@@ -8,22 +8,21 @@
     name: 'ErToast',
     props: {
       autoClose: {
-        type: Boolean,
-        default: true
-      },
-      autoCloseDelay: {
-        type: Number,
-        default: 3
+        type: [Boolean, Number],
+        default: 3,
+        validator(value) {
+          return false === value || typeof value === "number";
+        }
       }
     },
     mounted() {
       if (this.autoClose) {
-        setTimeout(this.close, this.autoCloseDelay * 1000)
+        setTimeout(this.close, this.autoClose * 1000)
       }
 
     },
     methods: {
-      close(){
+      close() {
         this.$el.remove();
         this.$destroy();
       }
