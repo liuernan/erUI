@@ -9,7 +9,7 @@
     let validFlag = true;
 
     keys.forEach((key) => {
-      if (!['span', 'offset'].includes(key)) {
+      if (['span', 'offset'].indexOf(key) === -1) {
         validFlag = false;
       }
     });
