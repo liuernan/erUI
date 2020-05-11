@@ -11,6 +11,7 @@ import Sider from './sider';
 import Content from './content';
 import Footer from './footer';
 import Toast from './toast'
+import Plugin from './plugin'
 
 Vue.component('er-button', Button);
 Vue.component('er-icon', Icon);
@@ -24,6 +25,7 @@ Vue.component('er-sider', Sider);
 Vue.component('er-content', Content);
 Vue.component('er-footer', Footer);
 Vue.component('er-toast', Toast);
+Vue.use(Plugin);
 
 new Vue({
   el: '#app',
@@ -31,5 +33,10 @@ new Vue({
     loading1: true,
     loading2: false,
     message: '支持双向绑定'
+  },
+  methods: {
+    testToast() {
+      this.$toast('我是一个 toast')
+    }
   }
 });
