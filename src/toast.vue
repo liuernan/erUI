@@ -1,6 +1,10 @@
 <template>
-  <div class="toast" :class="classList">
+  <div class="toast" :class="classList" ref="toast">
     <slot></slot>
+    <div v-if="closeButton" class="close" @click="clickClose">
+      <div class="line" ref="line"></div>
+      <span class="close-text">{{closeButton.text}}</span>
+    </div>
   </div>
 </template>
 <script>
@@ -20,6 +24,15 @@
         validator(value) {
           return ['top', 'middle', 'bottom'].indexOf(value) !== -1;
         }
+      },
+      closeButton: {
+        type: Object
+        // default(){
+        //   return {
+        //     text: '关闭',
+        //     callback: undefined
+        //   }
+        // }
       }
     },
     data() {
@@ -30,12 +43,21 @@
       }
     },
     mounted() {
+      this.updateStyles();
       if (this.autoClose) {
         setTimeout(this.close, this.autoClose * 1000)
       }
-
     },
     methods: {
+      updateStyles() {
+        this.$nextTick(() => {
+          this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
+        })
+      },
+      clickClose(){
+        this.closeButton && typeof this.closeButton.callback === 'function' && this.closeButton.callback();
+        this.close()
+      },
       close() {
         this.$el.remove();
         this.$destroy();
@@ -57,6 +79,7 @@
     color: white;
     padding: 4px 16px;
     border-radius: 4px;
+    cursor: default;
 
     &.toast-position-top {
       top: 0;
@@ -78,6 +101,24 @@
       transform: translateX(-50%);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+    }
+
+    & > .close {
+      display: flex;
+      align-items: center;
+      padding-right: 8px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    & > .close > .line {
+      height: 100%;
+      border-left: 1px solid white;
+      margin: 0 8px;
+    }
+
+    & > .close > .close-text {
+      flex-shrink: 0;
     }
   }
 </style>

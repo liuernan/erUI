@@ -45,9 +45,15 @@ new Vue({
       this.testToast('bottom');
     },
     testToast(position) {
-      this.$toast('我是一个 toast', {
+      this.$toast('我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个我是一个 toast', {
         autoClose: 50,
-        position: position
+        position: position,
+        closeButton: {
+          text: '关闭',
+          callback: () => {
+            console.log('用户的 callback 触发了');
+          }
+        }
       })
     }
   }
