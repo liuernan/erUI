@@ -27,12 +27,6 @@
       },
       closeButton: {
         type: Object
-        // default(){
-        //   return {
-        //     text: '关闭',
-        //     callback: undefined
-        //   }
-        // }
       }
     },
     data() {
@@ -54,12 +48,13 @@
           this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
         })
       },
-      clickClose(){
+      clickClose() {
         this.closeButton && typeof this.closeButton.callback === 'function' && this.closeButton.callback();
         this.close()
       },
       close() {
         this.$el.remove();
+        this.$emit('close');
         this.$destroy();
       }
     }
@@ -107,10 +102,12 @@
       display: flex;
       align-items: center;
       padding-right: 8px;
+
       &:hover {
         cursor: pointer;
       }
     }
+
     & > .close > .line {
       height: 100%;
       border-left: 1px solid white;
