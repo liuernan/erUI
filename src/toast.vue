@@ -47,7 +47,9 @@
     methods: {
       updateStyles() {
         this.$nextTick(() => {
-          this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
+          if (this.closeButton && this.closeButton.text) {
+            this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
+          }
         })
       },
       clickClose() {
