@@ -151,7 +151,6 @@
     & > .close {
       display: flex;
       align-items: center;
-      padding-right: 8px;
 
       &:hover {
         cursor: pointer;
