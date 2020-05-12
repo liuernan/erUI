@@ -1,9 +1,11 @@
 <template>
-  <div class="toast" :class="classList" ref="toast">
-    <slot></slot>
-    <div v-if="closeButton" class="close" @click="clickClose">
-      <div class="line" ref="line"></div>
-      <span class="close-text">{{closeButton.text}}</span>
+  <div class="warpper" :class="classList">
+    <div class="toast" ref="toast">
+      <slot></slot>
+      <div v-if="closeButton" class="close" @click="clickClose">
+        <div class="line" ref="line"></div>
+        <span class="close-text">{{closeButton.text}}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -62,12 +64,81 @@
 </script>
 <style lang="scss" scoped>
   $font-size: 14px;
-  $toast-min-height: 40px;
+  $toast-min-height: 30px;
   $toast-bg: rgba(0, 0, 0, 0.75);
+  $animation-duration: .3s;
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .warpper {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &.toast-position-top {
+      top: 0;
+      transform: translateX(-50%);
+
+      .toast {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        animation: slide-down $animation-duration;
+      }
+    }
+
+    &.toast-position-middle {
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      .toast {
+        animation: fade-in $animation-duration;
+      }
+    }
+
+    &.toast-position-bottom {
+      bottom: 0;
+      transform: translateX(-50%);
+
+      .toast {
+        animation: slide-up $animation-duration;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
   .toast {
     display: flex;
     align-items: center;
-    position: fixed;
     font-size: $font-size;
     min-height: $toast-min-height;
     background: $toast-bg;
@@ -76,27 +147,6 @@
     border-radius: 4px;
     cursor: default;
 
-    &.toast-position-top {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-
-    &.toast-position-middle {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    &.toast-position-bottom {
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
 
     & > .close {
       display: flex;
