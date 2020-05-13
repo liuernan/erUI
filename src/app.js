@@ -31,10 +31,10 @@ Vue.component('er-content', Content);
 Vue.component('er-footer', Footer);
 Vue.component('er-toast', Toast);
 Vue.component('er-tabs', Tabs);
-Vue.component('er-nav', TabsNav);
-Vue.component('er-item', TabsItem);
-Vue.component('er-content', TabsContent);
-Vue.component('er-panel', TabsPanel);
+Vue.component('er-tabs-nav', TabsNav);
+Vue.component('er-tabs-item', TabsItem);
+Vue.component('er-tabs-content', TabsContent);
+Vue.component('er-tabs-panel', TabsPanel);
 
 Vue.use(Plugin);
 

@@ -13,19 +13,19 @@
 <div id="app">
   <div class="buxiangqimingzi">
     <er-tabs selected="live" direction="horizontal">
-      <er-nav>
-        <template slot="erNavButton">
+      <er-tabs-nav>
+        <template slot="er-nav-button">
           <er-button icon="settings">操作按钮</er-button>
         </template>
-        <er-item name="women">美女</er-item>
-        <er-item name="live">直播</er-item>
-        <er-item name="videos">小电影</er-item>
-      </er-nav>
-      <er-content>
-        <er-panel name="women">美女的区域美女的区域美女的区域美女的区域美女的区域美女的区域</er-panel>
-        <er-panel name="live">直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域</er-panel>
-        <er-panel name="videos">全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影</er-panel>
-      </er-content>
+        <er-tabs-item name="women">美女</er-tabs-item>
+        <er-tabs-item name="live">直播</er-tabs-item>
+        <er-tabs-item name="videos">小电影</er-tabs-item>
+      </er-tabs-nav>
+      <er-tabs-content>
+        <er-tabs-panel name="women">美女的区域美女的区域美女的区域美女的区域美女的区域美女的区域</er-tabs-panel>
+        <er-tabs-panel name="live">直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域</er-tabs-panel>
+        <er-tabs-panel name="videos">全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影</er-tabs-panel>
+      </er-tabs-content>
     </er-tabs>
   </div>
   <div>
