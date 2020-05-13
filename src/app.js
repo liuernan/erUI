@@ -12,6 +12,11 @@ import Content from './content';
 import Footer from './footer';
 import Toast from './toast'
 import Plugin from './plugin'
+import Tabs from './tabs';
+import TabsNav from './tabs-nav';
+import TabsItem from './tabs-item';
+import TabsContent from './tabs-content';
+import TabsPanel from './tabs-panel';
 
 Vue.component('er-button', Button);
 Vue.component('er-icon', Icon);
@@ -25,6 +30,12 @@ Vue.component('er-sider', Sider);
 Vue.component('er-content', Content);
 Vue.component('er-footer', Footer);
 Vue.component('er-toast', Toast);
+Vue.component('er-tabs', Tabs);
+Vue.component('er-nav', TabsNav);
+Vue.component('er-item', TabsItem);
+Vue.component('er-content', TabsContent);
+Vue.component('er-panel', TabsPanel);
+
 Vue.use(Plugin);
 
 new Vue({

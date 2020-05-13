@@ -36,6 +36,20 @@
   }
 </style>
 <div id="app">
+  <div class="buxiangqimingzi">
+    <er-tabs selected="live" direction="horizontal">
+      <er-nav>
+        <er-item name="women">美女</er-item>
+        <er-item name="live">直播</er-item>
+        <er-item name="videos">小电影</er-item>
+      </er-nav>
+      <er-content>
+        <er-panel name="women">美女的区域美女的区域美女的区域美女的区域美女的区域美女的区域</er-panel>
+        <er-panel name="live">直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域</er-panel>
+        <er-panel name="videos">全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影</er-panel>
+      </er-content>
+    </er-tabs>
+  </div>
   <div>
     <er-button icon="settings" @click="testToastTop">点我从上面触发 toast</er-button>
     <er-button icon="settings" @click="testToastMiddle">点我从中间触发 toast</er-button>
