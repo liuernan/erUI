@@ -5,7 +5,12 @@
 </template>
 <script>
   export default {
-    name: 'ErTabsPanel'
+    name: 'ErTabsPanel',
+    props: {
+      name: {
+        type: String
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>
