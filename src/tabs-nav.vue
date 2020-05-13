@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot></slot>
+    <slot name="erNavButton"></slot>
   </div>
 </template>
 <script>
