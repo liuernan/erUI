@@ -9,6 +9,10 @@
     props: {
       name: {
         type: String
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       }
     }
   }
