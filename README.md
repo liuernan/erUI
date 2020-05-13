@@ -1,6 +1,6 @@
 # er-ui-demo
 
-[![Build Status](https://travis-ci.org/liuernan/erUI.svg?branch=master)](https://travis-ci.org/liuernan/erUI)
+[![Build Status](https://travis-ci.com/liuernan/erUI.svg?branch=master)](https://travis-ci.com/liuernan/erUI)
 
 ## 介绍
 
