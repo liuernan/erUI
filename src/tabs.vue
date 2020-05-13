@@ -19,7 +19,7 @@
       }
     },
     mounted() {
-      this.$emit('update:selected', '')
+      // this.$emit('update:selected', '')
     }
   }
 </script>
