@@ -43,7 +43,8 @@ new Vue({
   data: {
     loading1: true,
     loading2: false,
-    message: '支持双向绑定'
+    message: '支持双向绑定',
+    selectedTab: 'live'
   },
   methods: {
     testToastTop() {

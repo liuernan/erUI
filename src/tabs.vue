@@ -8,7 +8,8 @@
     name: 'ErTabs',
     props: {
       selected: {
-        type: String
+        type: String,
+        required: true
       },
       direction: {
         type: String,
@@ -16,6 +17,9 @@
           return ['horizontal', 'vertical'].indexOf(value) !== -1;
         }
       }
+    },
+    mounted() {
+      this.$emit('update:selected', '')
     }
   }
 </script>

@@ -12,7 +12,7 @@
 <body>
 <div id="app">
   <div class="buxiangqimingzi">
-    <er-tabs selected="live" direction="horizontal">
+    <er-tabs :selected.sync="selectedTab" direction="horizontal">
       <er-tabs-nav>
         <template slot="er-nav-button">
           <er-button icon="settings">操作按钮</er-button>
