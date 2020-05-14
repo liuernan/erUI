@@ -4,11 +4,13 @@
   </div>
 </template>
 <script>
+  import Vue from 'vue';
+
   export default {
     name: 'ErTabs',
     props: {
       selected: {
-        type: String,
+        type: [String, Number],
         required: true
       },
       direction: {
@@ -18,8 +20,18 @@
         }
       }
     },
+    data() {
+      return {
+        eventHub: new Vue()
+      }
+    },
+    provide() {
+      return {
+        eventHub: this.eventHub
+      }
+    },
     mounted() {
-      // this.$emit('update:selected', '')
+      this.eventHub.$emit('update:selected', this.selected);
     }
   }
 </script>
