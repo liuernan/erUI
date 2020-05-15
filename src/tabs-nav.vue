@@ -22,7 +22,7 @@
   .er-tabs-nav {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     height: $tabs-nav-height;
     > .er-nav-button-wrapper {
       margin-left: auto;
