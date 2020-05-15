@@ -9,7 +9,7 @@
     inject: ['eventHub'],
     mounted() {
       this.eventHub.$on('update:selected', (name) => {
-        console.log(name);
+        // console.log(name);
       });
     }
   }

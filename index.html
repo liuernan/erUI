@@ -10,16 +10,25 @@
 </head>
 
 <body>
+<style>
+  .nav-test {
+    border: 1px solid gray;
+  }
+
+  .item-test {
+    border: 1px solid skyblue;
+  }
+</style>
 <div id="app">
   <div class="buxiangqimingzi">
     <er-tabs :selected.sync="selectedTab" direction="horizontal">
-      <er-tabs-nav>
+      <er-tabs-nav class="nav-test">
         <template slot="er-nav-button">
           <er-button icon="settings">操作按钮</er-button>
         </template>
-        <er-tabs-item name="women">美女</er-tabs-item>
-        <er-tabs-item name="live">直播</er-tabs-item>
-        <er-tabs-item name="videos" disabled>小电影</er-tabs-item>
+        <er-tabs-item class="item-test" name="women">美女</er-tabs-item>
+        <er-tabs-item class="item-test" name="live">直播</er-tabs-item>
+        <er-tabs-item class="item-test" name="videos" disabled>小电影</er-tabs-item>
       </er-tabs-nav>
       <er-tabs-content>
         <er-tabs-panel name="women">美女的区域美女的区域美女的区域美女的区域美女的区域美女的区域</er-tabs-panel>
