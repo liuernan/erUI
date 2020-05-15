@@ -18,11 +18,10 @@
   }
 </script>
 <style lang="scss" scoped>
-  $tabs-nav-height: 40px;
+  $tabs-nav-height: 60px;
   .er-tabs-nav {
     display: flex;
-    justify-content: center;
-    /*align-items: center;*/
+    align-items: flex-end;
     height: $tabs-nav-height;
     > .er-nav-button-wrapper {
       margin-left: auto;

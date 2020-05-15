@@ -44,9 +44,12 @@
   }
 </script>
 <style lang="scss" scoped>
+  $tabs-item-height: 40px;
   .tabs-item {
     padding: 0 1em;
-    height: 100%;
+    height: $tabs-item-height;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     display: flex;
     align-items: center;
 
