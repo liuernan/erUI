@@ -49,9 +49,11 @@
   $tabs-item-height: 40px;
   $tabs-item-active-bg: lightpink;
   $tabs-item-disabled-bg: lightgray;
+  $tabs-item-border: 1px solid #999;
   .tabs-item {
     padding: 0 1em;
     height: $tabs-item-height;
+    border: $tabs-item-border;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     display: flex;

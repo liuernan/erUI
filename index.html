@@ -10,23 +10,10 @@
 </head>
 
 <body>
-<style>
-  .nav-test {
-    border: 1px solid gray;
-  }
-
-  .item-test {
-    border: 1px solid skyblue;
-  }
-
-  .panel-test {
-    background-color: skyblue;
-  }
-</style>
 <div id="app">
   <div class="buxiangqimingzi">
     <er-tabs :selected.sync="selectedTab" direction="horizontal">
-      <er-tabs-nav class="nav-test">
+      <er-tabs-nav>
         <template slot="er-nav-button">
           <er-button icon="settings">操作按钮</er-button>
         </template>

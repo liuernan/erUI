@@ -28,8 +28,10 @@
   }
 </script>
 <style lang="scss" scoped>
-  $height: 200px;
+  $tabs-panel-height: 200px;
+  $tabs-panel-border: 1px solid #999;
   .tabs-panel {
-    height: $height;
+    height: $tabs-panel-height;
+    border: $tabs-panel-border;
   }
 </style>
