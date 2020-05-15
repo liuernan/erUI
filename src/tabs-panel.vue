@@ -31,6 +31,5 @@
   $height: 200px;
   .tabs-panel {
     height: $height;
-    background-color: skyblue;
   }
 </style>
