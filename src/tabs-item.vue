@@ -33,14 +33,14 @@
     },
     inject: ['eventHub'],
     mounted() {
-      this.eventHub.$on('update:selected', (name) => {
+      this.eventHub && this.eventHub.$on('update:selected', (name) => {
         this.active = name === this.name;
       });
     },
     methods: {
       clickItem() {
         if (this.disabled) return false;
-        this.eventHub.$emit('update:selected', this.name);
+        this.eventHub &&  this.eventHub.$emit('update:selected', this.name);
       }
     }
   }
