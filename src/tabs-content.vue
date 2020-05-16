@@ -5,13 +5,7 @@
 </template>
 <script>
   export default {
-    name: 'ErTabsContent',
-    inject: ['eventHub'],
-    mounted() {
-      this.eventHub.$on('update:selected', (name) => {
-        // console.log(name);
-      });
-    }
+    name: 'ErTabsContent'
   }
 </script>
 <style lang="scss" scoped>
