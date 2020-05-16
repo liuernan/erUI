@@ -41,6 +41,7 @@
       clickItem() {
         if (this.disabled) return false;
         this.eventHub &&  this.eventHub.$emit('update:selected', this.name);
+        this.$emit('click', this);
       }
     }
   }
