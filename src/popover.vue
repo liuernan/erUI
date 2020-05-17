@@ -33,7 +33,9 @@
     > .popover-content-warpper {
       position: absolute;
       bottom: 110%;
+      padding: 0 1em;
       border: 1px solid gray;
+      box-shadow: 0 0 3px rgba(0, 0, 0, .5);
     }
   }
 </style>
