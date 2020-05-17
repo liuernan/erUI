@@ -3,7 +3,7 @@
     <div class="popover-content-warpper" v-if="visible">
       <slot name="popover-content"></slot>
     </div>
-    <div @click="clickButton">
+    <div @click.stop="clickButton">
       <slot></slot>
     </div>
   </div>
@@ -20,6 +20,18 @@
     methods: {
       clickButton() {
         this.visible = !this.visible;
+
+        const domClickHandler = () => {
+          this.visible = false;
+          document.removeEventListener('click', domClickHandler);
+        };
+
+        if (this.visible) {
+          document.addEventListener('click', domClickHandler);
+        } else {
+          // 这里有 bug 自己删不掉
+          document.removeEventListener('click', domClickHandler);
+        }
       }
     }
   }
