@@ -29,7 +29,7 @@
         if (this.visible) {
           document.addEventListener('click', domClickHandler);
         } else {
-          // 这里有 bug 自己删不掉
+          // todo: 这里有 bug 自己删不掉
           document.removeEventListener('click', domClickHandler);
         }
       }
