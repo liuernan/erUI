@@ -17,6 +17,7 @@ import TabsNav from './tabs-nav';
 import TabsItem from './tabs-item';
 import TabsContent from './tabs-content';
 import TabsPanel from './tabs-panel';
+import Popover from './popover';
 
 Vue.component('er-button', Button);
 Vue.component('er-icon', Icon);
@@ -35,6 +36,7 @@ Vue.component('er-tabs-nav', TabsNav);
 Vue.component('er-tabs-item', TabsItem);
 Vue.component('er-tabs-content', TabsContent);
 Vue.component('er-tabs-panel', TabsPanel);
+Vue.component('er-popover', Popover);
 
 Vue.use(Plugin);
 
