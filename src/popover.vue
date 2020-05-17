@@ -1,9 +1,9 @@
 <template>
-  <div class="popover">
-    <div class="popover-content-warpper" v-if="visible" @click.stop>
+  <div class="popover" ref="popoverwrapper" @click.stop="onClick">
+    <div class="popover-content-wrapper" ref="popoverContentWrapper" v-if="visible">
       <slot name="popover-content"></slot>
     </div>
-    <div @click.stop="clickButton">
+    <div ref="triggerWrapper">
       <slot></slot>
     </div>
   </div>
@@ -18,19 +18,24 @@
       }
     },
     methods: {
-      clickButton() {
-        this.visible = !this.visible;
-
-        const domClickHandler = () => {
-          this.visible = false;
-          document.removeEventListener('click', domClickHandler);
-        };
-
-        if (this.visible) {
-          document.addEventListener('click', domClickHandler);
-        } else {
-          // todo: 这里有 bug 自己删不掉
-          document.removeEventListener('click', domClickHandler);
+      open() {
+        this.visible = true;
+        document.addEventListener('click', this.domClickHandler);
+      },
+      close() {
+        this.visible = false;
+        document.removeEventListener('click', this.domClickHandler);
+      },
+      domClickHandler() {
+        this.close();
+      },
+      onClick(e) {
+        if (this.$refs.triggerWrapper.contains(e.target)) {
+          if (this.visible) {
+            this.close();
+          } else {
+            this.open();
+          }
         }
       }
     }
@@ -42,7 +47,7 @@
     display: inline-block;
     position: relative;
 
-    > .popover-content-warpper {
+    > .popover-content-wrapper {
       position: absolute;
       bottom: 110%;
       padding: 0 1em;
