@@ -1,9 +1,9 @@
 <template>
-  <div class="popover" ref="popoverwrapper" @click.stop="onClick">
+  <div class="popover" @click.stop="onClick">
     <div class="popover-content-wrapper" ref="popoverContentWrapper" v-if="visible">
       <slot name="popover-content"></slot>
     </div>
-    <div ref="triggerWrapper">
+    <div ref="popoverTriggerWrapper">
       <slot></slot>
     </div>
   </div>
@@ -20,17 +20,27 @@
     methods: {
       open() {
         this.visible = true;
-        document.addEventListener('click', this.domClickHandler);
+        this.$nextTick(() => {
+          document.addEventListener('click', this.domClickHandler);
+
+          const {top, left} = this.$refs.popoverTriggerWrapper.getBoundingClientRect();
+          this.$refs.popoverContentWrapper.style.top = top + window.scrollY + 'px';
+          this.$refs.popoverContentWrapper.style.left = left + window.scrollX + 'px';
+          document.body.appendChild(this.$refs.popoverContentWrapper);
+
+        });
       },
       close() {
         this.visible = false;
         document.removeEventListener('click', this.domClickHandler);
       },
-      domClickHandler() {
-        this.close();
+      domClickHandler(e) {
+        if (!(this.$refs.popoverContentWrapper.contains(e.target) || this.$refs.popoverTriggerWrapper.contains(e.target))) {
+          this.close();
+        }
       },
       onClick(e) {
-        if (this.$refs.triggerWrapper.contains(e.target)) {
+        if (this.$refs.popoverTriggerWrapper.contains(e.target)) {
           if (this.visible) {
             this.close();
           } else {
@@ -46,13 +56,13 @@
   .popover {
     display: inline-block;
     position: relative;
+  }
 
-    > .popover-content-wrapper {
-      position: absolute;
-      bottom: 110%;
-      padding: 0 1em;
-      border: 1px solid gray;
-      box-shadow: 0 0 3px rgba(0, 0, 0, .5);
-    }
+  .popover-content-wrapper {
+    position: absolute;
+    padding: 0 1em;
+    transform: translateY(-110%);
+    border: 1px solid gray;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
   }
 </style>
