@@ -1,6 +1,6 @@
 <template>
   <div class="popover">
-    <div class="popover-content-warpper" v-if="visible">
+    <div class="popover-content-warpper" v-if="visible" @click.stop>
       <slot name="popover-content"></slot>
     </div>
     <div @click.stop="clickButton">
