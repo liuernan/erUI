@@ -59,26 +59,26 @@
         });
       },
       setPosition() {
-        const $popoverTrigger = this.$refs.popoverTriggerWrapper;
-        const $popoverContent = this.$refs.popoverContentWrapper;
-        const {width, height, top, left} = $popoverTrigger.getBoundingClientRect();
-        const {height: contentHeight} = $popoverContent.getBoundingClientRect();
+        const {popoverTriggerWrapper, popoverContentWrapper} = this.$refs;
+        document.body.appendChild(popoverContentWrapper);
+
+        const {width, height, top, left} = popoverTriggerWrapper.getBoundingClientRect();
+        const {height: contentHeight} = popoverContentWrapper.getBoundingClientRect();
+
         if ('top' === this.position) {
-          $popoverContent.style.top = top + window.scrollY + 'px';
-          $popoverContent.style.left = left + window.scrollX + 'px';
+          popoverContentWrapper.style.top = top + window.scrollY + 'px';
+          popoverContentWrapper.style.left = left + window.scrollX + 'px';
         } else if ('bottom' === this.position) {
-          $popoverContent.style.top = top + height + window.scrollY + 'px';
-          $popoverContent.style.left = left + window.scrollX + 'px';
+          popoverContentWrapper.style.top = top + height + window.scrollY + 'px';
+          popoverContentWrapper.style.left = left + window.scrollX + 'px';
         } else if ('left' === this.position) {
-          console.log(contentHeight);  //todo: height 怎么这么高？
-          $popoverContent.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
-          $popoverContent.style.left = left + window.scrollX + 'px';
+          popoverContentWrapper.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
+          popoverContentWrapper.style.left = left + window.scrollX + 'px';
         } else if ('right' === this.position) {
-          $popoverContent.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
-          $popoverContent.style.left = left + width + window.scrollX + 'px';
+          popoverContentWrapper.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
+          popoverContentWrapper.style.left = left + width + window.scrollX + 'px';
         }
 
-        document.body.appendChild($popoverContent);
       },
       close() {
         this.visible = false;
