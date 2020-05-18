@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick">
+  <div class="popover">
     <div class="popover-content-wrapper" ref="popoverContentWrapper" v-if="visible">
       <slot name="popover-content"></slot>
     </div>
@@ -17,6 +17,31 @@
         visible: false
       }
     },
+    props: {
+      trigger: {
+        type: String,
+        default: 'click',
+        validator(value) {
+          return ['click', 'hover'].indexOf(value) !== -1;
+        }
+      }
+    },
+    mounted() {
+      if ('click' === this.trigger) {
+        this.$el.addEventListener('click', this.clickHandler);
+      } else {
+        this.$el.addEventListener('mouseenter', this.open);
+        this.$el.addEventListener('mouseleave', this.close);
+      }
+    },
+    destroyed() {
+      if ('click' === this.trigger) {
+        this.$el.removeEventListener('click', this.clickHandler);
+      } else {
+        this.$el.removeEventListener('mouseenter', this.open);
+        this.$el.removeEventListener('mouseleave', this.close);
+      }
+    },
     methods: {
       open() {
         this.visible = true;
@@ -27,7 +52,6 @@
           this.$refs.popoverContentWrapper.style.top = top + window.scrollY + 'px';
           this.$refs.popoverContentWrapper.style.left = left + window.scrollX + 'px';
           document.body.appendChild(this.$refs.popoverContentWrapper);
-
         });
       },
       close() {
@@ -35,12 +59,11 @@
         document.removeEventListener('click', this.domClickHandler);
       },
       domClickHandler(e) {
-
         if (!(this.$refs.popoverContentWrapper.contains(e.target) || this.$refs.popoverTriggerWrapper.contains(e.target))) {
           this.close();
         }
       },
-      onClick(e) {
+      clickHandler(e) {
         if (this.$refs.popoverTriggerWrapper.contains(e.target)) {
           if (this.visible) {
             this.close();
