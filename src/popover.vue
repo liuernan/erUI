@@ -1,6 +1,7 @@
 <template>
   <div class="popover">
-    <div class="popover-content-wrapper" ref="popoverContentWrapper" v-if="visible">
+    <div class="popover-content-wrapper" :class="{[`popover-${position}`]: true}" ref="popoverContentWrapper"
+         v-if="visible">
       <slot name="popover-content"></slot>
     </div>
     <div ref="popoverTriggerWrapper">
@@ -23,6 +24,13 @@
         default: 'click',
         validator(value) {
           return ['click', 'hover'].indexOf(value) !== -1;
+        }
+      },
+      position: {
+        type: String,
+        default: 'top',
+        validator(value) {
+          return ['top', 'bottom', 'left', 'right'].indexOf(value) !== -1;
         }
       }
     },
@@ -51,10 +59,26 @@
         });
       },
       setPosition() {
-        const {top, left} = this.$refs.popoverTriggerWrapper.getBoundingClientRect();
-        this.$refs.popoverContentWrapper.style.top = top + window.scrollY + 'px';
-        this.$refs.popoverContentWrapper.style.left = left + window.scrollX + 'px';
-        document.body.appendChild(this.$refs.popoverContentWrapper);
+        const $popoverTrigger = this.$refs.popoverTriggerWrapper;
+        const $popoverContent = this.$refs.popoverContentWrapper;
+        const {width, height, top, left} = $popoverTrigger.getBoundingClientRect();
+        const {height: contentHeight} = $popoverContent.getBoundingClientRect();
+        if ('top' === this.position) {
+          $popoverContent.style.top = top + window.scrollY + 'px';
+          $popoverContent.style.left = left + window.scrollX + 'px';
+        } else if ('bottom' === this.position) {
+          $popoverContent.style.top = top + height + window.scrollY + 'px';
+          $popoverContent.style.left = left + window.scrollX + 'px';
+        } else if ('left' === this.position) {
+          console.log(contentHeight);  //todo: height 怎么这么高？
+          $popoverContent.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
+          $popoverContent.style.left = left + window.scrollX + 'px';
+        } else if ('right' === this.position) {
+          $popoverContent.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
+          $popoverContent.style.left = left + width + window.scrollX + 'px';
+        }
+
+        document.body.appendChild($popoverContent);
       },
       close() {
         this.visible = false;
@@ -95,10 +119,7 @@
     word-break: break-all;
     border: 1px solid $popover-border-color;
     border-radius: $popover-border-radius;
-    box-shadow: $popover-box-shadow;
     filter: drop-shadow($popover-box-shadow);
-    transform: translateY(-100%);
-    margin-top: -10px;
     background: #fff;
 
     &::before,
@@ -111,14 +132,72 @@
       position: absolute;
     }
 
-    &::before {
-      border-top-color: $popover-border-color;
-      top: 100%;
+    &.popover-top {
+      transform: translateY(-100%);
+      margin-top: -10px;
+
+      &::before {
+        border-top-color: $popover-border-color;
+        top: 100%;
+      }
+
+      &:after {
+        border-top-color: #fff;
+        top: calc(100% - 1px);
+      }
     }
 
-    &:after {
-      border-top-color: #fff;
-      top: calc(100% - 1px);
+    &.popover-bottom {
+      margin-top: 10px;
+
+      &::before {
+        border-bottom-color: $popover-border-color;
+        bottom: 100%;
+      }
+
+      &:after {
+        border-bottom-color: #fff;
+        bottom: calc(100% - 1px);
+      }
+    }
+
+    &.popover-left {
+      transform: translateX(-100%);
+      margin-left: -10px;
+
+      &::before, &::after {
+        transform: translateY(-50%);
+        top: 50%;
+      }
+
+      &::before {
+        border-left-color: $popover-border-color;
+        left: 100%;
+      }
+
+      &:after {
+        border-left-color: #fff;
+        left: calc(100% - 1px);
+      }
+    }
+
+    &.popover-right {
+      margin-left: 10px;
+
+      &::before, &::after {
+        transform: translateY(-50%);
+        top: 50%;
+      }
+
+      &::before {
+        border-right-color: $popover-border-color;
+        right: 100%;
+      }
+
+      &:after {
+        border-right-color: #fff;
+        right: calc(100% - 1px);
+      }
     }
   }
 </style>
