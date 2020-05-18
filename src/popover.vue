@@ -47,12 +47,14 @@
         this.visible = true;
         this.$nextTick(() => {
           document.addEventListener('click', this.domClickHandler);
-
-          const {top, left} = this.$refs.popoverTriggerWrapper.getBoundingClientRect();
-          this.$refs.popoverContentWrapper.style.top = top + window.scrollY + 'px';
-          this.$refs.popoverContentWrapper.style.left = left + window.scrollX + 'px';
-          document.body.appendChild(this.$refs.popoverContentWrapper);
+          this.setPosition();
         });
+      },
+      setPosition() {
+        const {top, left} = this.$refs.popoverTriggerWrapper.getBoundingClientRect();
+        this.$refs.popoverContentWrapper.style.top = top + window.scrollY + 'px';
+        this.$refs.popoverContentWrapper.style.left = left + window.scrollX + 'px';
+        document.body.appendChild(this.$refs.popoverContentWrapper);
       },
       close() {
         this.visible = false;
