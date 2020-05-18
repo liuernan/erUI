@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click.stop="onClick">
+  <div class="popover" @click="onClick">
     <div class="popover-content-wrapper" ref="popoverContentWrapper" v-if="visible">
       <slot name="popover-content"></slot>
     </div>
@@ -35,6 +35,7 @@
         document.removeEventListener('click', this.domClickHandler);
       },
       domClickHandler(e) {
+
         if (!(this.$refs.popoverContentWrapper.contains(e.target) || this.$refs.popoverTriggerWrapper.contains(e.target))) {
           this.close();
         }
