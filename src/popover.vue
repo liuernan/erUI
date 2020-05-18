@@ -79,6 +79,10 @@
 </script>
 
 <style lang="scss" scoped>
+  $popover-border-color: gray;
+  $popover-border-radius: 4px;
+  $popover-max-width: 20em;
+  $popover-box-shadow: 0 0 3px rgba(0, 0, 0, .5);
   .popover {
     display: inline-block;
     position: relative;
@@ -86,9 +90,35 @@
 
   .popover-content-wrapper {
     position: absolute;
-    padding: 0 1em;
-    transform: translateY(-110%);
-    border: 1px solid gray;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    padding: .5em 1em;
+    max-width: $popover-max-width;
+    word-break: break-all;
+    border: 1px solid $popover-border-color;
+    border-radius: $popover-border-radius;
+    box-shadow: $popover-box-shadow;
+    filter: drop-shadow($popover-box-shadow);
+    transform: translateY(-100%);
+    margin-top: -10px;
+    background: #fff;
+
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      position: absolute;
+    }
+
+    &::before {
+      border-top-color: $popover-border-color;
+      top: 100%;
+    }
+
+    &:after {
+      border-top-color: #fff;
+      top: calc(100% - 1px);
+    }
   }
 </style>
