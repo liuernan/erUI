@@ -30,15 +30,19 @@
         eventHub: this.eventHub
       }
     },
-    mounted() {
-      if (!this.$children.length
-        || this.$children[0].$options.name !== 'ErTabsNav'
-        || this.$children[1].$options.name !== 'ErTabsContent'
-      ) {
-        console && console.warn
-        && console.warn('erUI: tabs 组件里面应该有且只有两个子组件，第一个是 tabs-nav，第二个是 tabs-content。请检查一下你的代码');
+    methods: {
+      checkChildren(){
+        if (!this.$children.length
+          || this.$children[0].$options.name !== 'ErTabsNav'
+          || this.$children[1].$options.name !== 'ErTabsContent'
+        ) {
+          console && console.warn
+          && console.warn('erUI: tabs 组件里面应该有且只有两个子组件，第一个是 tabs-nav，第二个是 tabs-content。请检查一下你的代码');
+        }
       }
-
+    },
+    mounted() {
+      this.checkChildren();
       this.eventHub.$emit('update:selected', this.selected);
     }
   }
