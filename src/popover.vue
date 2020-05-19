@@ -13,11 +13,6 @@
 <script>
   export default {
     name: "ErPopover",
-    data() {
-      return {
-        visible: false
-      }
-    },
     props: {
       trigger: {
         type: String,
@@ -32,6 +27,11 @@
         validator(value) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) !== -1;
         }
+      }
+    },
+    data() {
+      return {
+        visible: false
       }
     },
     mounted() {
