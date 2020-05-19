@@ -65,20 +65,27 @@
         const {width, height, top, left} = popoverTriggerWrapper.getBoundingClientRect();
         const {height: contentHeight} = popoverContentWrapper.getBoundingClientRect();
 
-        if ('top' === this.position) {
-          popoverContentWrapper.style.top = top + window.scrollY + 'px';
-          popoverContentWrapper.style.left = left + window.scrollX + 'px';
-        } else if ('bottom' === this.position) {
-          popoverContentWrapper.style.top = top + height + window.scrollY + 'px';
-          popoverContentWrapper.style.left = left + window.scrollX + 'px';
-        } else if ('left' === this.position) {
-          popoverContentWrapper.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
-          popoverContentWrapper.style.left = left + window.scrollX + 'px';
-        } else if ('right' === this.position) {
-          popoverContentWrapper.style.top = top + window.scrollY + (height - contentHeight) / 2 + 'px';
-          popoverContentWrapper.style.left = left + width + window.scrollX + 'px';
-        }
+        const positionConfig = {
+          top: {
+            top: top + window.scrollY,
+            left: left + window.scrollX
+          },
+          bottom: {
+            top: top + height + window.scrollY,
+            left: left + window.scrollX
+          },
+          left: {
+            top: top + window.scrollY + (height - contentHeight) / 2,
+            left: left + window.scrollX
+          },
+          right: {
+            top: top + window.scrollY + (height - contentHeight) / 2,
+            left: left + width + window.scrollX
+          }
+        };
 
+        popoverContentWrapper.style.top = positionConfig[this.position].top + 'px';
+        popoverContentWrapper.style.left = positionConfig[this.position].left + 'px';
       },
       close() {
         this.visible = false;
