@@ -2,7 +2,7 @@
   <div class="popover">
     <div class="popover-content-wrapper" :class="{[`popover-${position}`]: true}" ref="popoverContentWrapper"
          v-if="visible">
-      <slot name="popover-content"></slot>
+      <slot name="popover-content" :close="close" ></slot>
     </div>
     <div ref="popoverTriggerWrapper">
       <slot></slot>
@@ -51,13 +51,6 @@
       }
     },
     methods: {
-      open() {
-        this.visible = true;
-        this.$nextTick(() => {
-          document.addEventListener('click', this.domClickHandler);
-          this.setPosition();
-        });
-      },
       setPosition() {
         const {popoverTriggerWrapper, popoverContentWrapper} = this.$refs;
         document.body.appendChild(popoverContentWrapper);
@@ -86,6 +79,13 @@
 
         popoverContentWrapper.style.top = positionConfig[this.position].top + 'px';
         popoverContentWrapper.style.left = positionConfig[this.position].left + 'px';
+      },
+      open() {
+        this.visible = true;
+        this.$nextTick(() => {
+          document.addEventListener('click', this.domClickHandler);
+          this.setPosition();
+        });
       },
       close() {
         this.visible = false;

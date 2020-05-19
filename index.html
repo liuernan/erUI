@@ -13,10 +13,11 @@
 <div id="app">
   <div style="padding: 300px;border: 1px solid red; overflow: hidden">
     <er-popover>
-      <template slot="popover-content">
+      <template slot="popover-content" slot-scope="{close}">
         <div>我是 popover 的内容</div>
+        <er-button icon="settings" @click="close" >关闭</er-button>
       </template>
-      <er-button>点我出现 popover</er-button>
+      <er-button>点我上面出现 popover</er-button>
     </er-popover>
     <er-popover position="bottom">
       <template slot="popover-content">
