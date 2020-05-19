@@ -146,11 +146,13 @@
       &::before {
         border-top-color: $popover-border-color;
         top: 100%;
+        border-bottom: none;
       }
 
       &:after {
         border-top-color: #fff;
         top: calc(100% - 1px);
+        border-bottom: none;
       }
     }
 
@@ -160,11 +162,13 @@
       &::before {
         border-bottom-color: $popover-border-color;
         bottom: 100%;
+        border-top: none;
       }
 
       &:after {
         border-bottom-color: #fff;
         bottom: calc(100% - 1px);
+        border-top: none;
       }
     }
 
@@ -180,11 +184,13 @@
       &::before {
         border-left-color: $popover-border-color;
         left: 100%;
+        border-right: none;
       }
 
       &:after {
         border-left-color: #fff;
         left: calc(100% - 1px);
+        border-right: none;
       }
     }
 
@@ -199,11 +205,13 @@
       &::before {
         border-right-color: $popover-border-color;
         right: 100%;
+        border-left: none;
       }
 
       &:after {
         border-right-color: #fff;
         right: calc(100% - 1px);
+        border-left: none;
       }
     }
   }
