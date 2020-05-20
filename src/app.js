@@ -18,6 +18,8 @@ import TabsItem from './tabs-item';
 import TabsContent from './tabs-content';
 import TabsPanel from './tabs-panel';
 import Popover from './popover';
+import Collapse from './collapse';
+import CollapseItem from './collapse-item';
 
 Vue.component('er-button', Button);
 Vue.component('er-icon', Icon);
@@ -37,6 +39,8 @@ Vue.component('er-tabs-item', TabsItem);
 Vue.component('er-tabs-content', TabsContent);
 Vue.component('er-tabs-panel', TabsPanel);
 Vue.component('er-popover', Popover);
+Vue.component('er-collapse', Collapse);
+Vue.component('er-collapse-item', CollapseItem);
 
 Vue.use(Plugin);
 
