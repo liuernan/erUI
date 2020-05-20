@@ -16,6 +16,7 @@
 
   .er-collapse {
     border: 1px solid $er-collapse-border-color;
-    border-radius: $er-collapse-border-radius;
+    border-top-left-radius: $er-collapse-border-radius;
+    border-top-right-radius: $er-collapse-border-radius;
   }
 </style>

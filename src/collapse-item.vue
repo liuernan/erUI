@@ -1,9 +1,9 @@
 <template>
   <div class="er-collapse-item-wrapper">
-    <div class="er-collapse-item-title">
+    <div class="er-collapse-item-title" @click="open = !open">
       {{title}}
     </div>
-    <div class="er-collapse-item-content">
+    <div class="er-collapse-item-content" v-if="open">
       <slot></slot>
     </div>
   </div>
@@ -16,6 +16,11 @@
       title: {
         type: String,
         required: true
+      }
+    },
+    data() {
+      return {
+        open: false
       }
     }
   }
