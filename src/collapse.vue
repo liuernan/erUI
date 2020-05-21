@@ -40,7 +40,7 @@
           selectedItems = [title];
         }
         this.eventHub.$emit('update:selected', selectedItems);
-        this.$emit('update:selected', selectedItems);
+        this.$emit('update:selected', selectedItems, this);
       });
 
       this.eventHub.$on('removeSelected', (title) => {
@@ -50,7 +50,7 @@
           selectedItems = [];
         }
         this.eventHub.$emit('update:selected', selectedItems);
-        this.$emit('update:selected', selectedItems);
+        this.$emit('update:selected', selectedItems, this);
       })
     }
   }

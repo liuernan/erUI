@@ -57,12 +57,15 @@ new Vue({
     testToastTop() {
       this.testToast('top');
     },
+
     testToastMiddle() {
       this.testToast('middle');
     },
+
     testToastBottom() {
       this.testToast('bottom');
     },
+
     testToast(position) {
       this.$toast('我是一个 toast', {
         autoClose: 50,
@@ -74,6 +77,12 @@ new Vue({
           }
         }
       })
+    },
+
+    selecteCollapse(arr, vm) {
+      console.log(arr);
+      console.log(vm);
+      console.log('chufale');
     }
   }
 });
