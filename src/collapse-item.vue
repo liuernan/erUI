@@ -1,6 +1,6 @@
 <template>
   <div class="er-collapse-item-wrapper">
-    <div class="er-collapse-item-title" @click="open = !open">
+    <div class="er-collapse-item-title" @click="clickItem">
       {{title}}
     </div>
     <div class="er-collapse-item-content" v-if="open">
@@ -21,6 +21,27 @@
     data() {
       return {
         open: false
+      }
+    },
+    inject: ['eventHub'],
+    mounted() {
+      this.eventHub.$on('update:selected', (selectedTitle) => {
+        if (selectedTitle === this.title) {
+          this.open = true;
+        } else {
+          this.open = false;
+        }
+      })
+    },
+    methods: {
+      clickItem() {
+        if (this.open) {
+          this.open = false;
+        } else {
+          this.open = true;
+          this.eventHub.$emit('update:selected', this.title);
+        }
+        this.$emit('click', this);
       }
     }
   }
