@@ -51,7 +51,7 @@ new Vue({
     loading2: false,
     message: '支持双向绑定',
     selectedTab: 'live',
-    selectedItem: '标题2'
+    selectedCollapses: ['标题2']
   },
   methods: {
     testToastTop() {

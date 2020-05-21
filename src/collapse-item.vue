@@ -25,8 +25,8 @@
     },
     inject: ['eventHub'],
     mounted() {
-      this.eventHub.$on('update:selected', (selectedTitle) => {
-        if (selectedTitle === this.title) {
+      this.eventHub.$on('update:selected', (selected) => {
+        if (selected.indexOf(this.title) !== -1) {
           this.open = true;
         } else {
           this.open = false;
@@ -36,10 +36,9 @@
     methods: {
       clickItem() {
         if (this.open) {
-          this.open = false;
+          this.eventHub.$emit('removeSelected', this.title)
         } else {
-          this.open = true;
-          this.eventHub.$emit('update:selected', this.title);
+          this.eventHub.$emit('addSelected', this.title);
         }
         this.$emit('click', this);
       }

@@ -6,14 +6,19 @@
 
 <script>
   import Vue from 'vue';
+
   export default {
     name: "ErCollapse",
     props: {
       selected: {
-        type: String
+        type: Array
+      },
+      multiple: {
+        type: Boolean,
+        default: false
       }
     },
-    data(){
+    data() {
       return {
         eventHub: new Vue()
       }
@@ -25,6 +30,28 @@
     },
     mounted() {
       this.eventHub.$emit('update:selected', this.selected);
+
+      let selectedItems = JSON.parse(JSON.stringify(this.selected));
+
+      this.eventHub.$on('addSelected', (title) => {
+        if (this.multiple) {
+          selectedItems.push(title);
+        } else {
+          selectedItems = [title];
+        }
+        this.eventHub.$emit('update:selected', selectedItems);
+        this.$emit('update:selected', selectedItems);
+      });
+
+      this.eventHub.$on('removeSelected', (title) => {
+        if (this.multiple) {
+          selectedItems.splice(selectedItems.indexOf(title), 1);
+        } else {
+          selectedItems = [];
+        }
+        this.eventHub.$emit('update:selected', selectedItems);
+        this.$emit('update:selected', selectedItems);
+      })
     }
   }
 </script>
