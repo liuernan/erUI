@@ -4,18 +4,16 @@ module.exports = {
   base: '/erUI/',
   themeConfig: {
     // logo: '/assets/img/logo.png',
-    lastUpdated: 'Last Updated', // string | boolean
+    lastUpdated: 'Last Updated',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/' },
+      { text: 'Docs', link: '/' },
+      // { text: 'Guide', link: '/' },
       { text: 'Github', link: 'https://github.com/liuernan/erUI' }
     ],
     sidebar: [
       {
-        title: '指南',   // 必要的
-        // path: '/introduce/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-        collapsable: false, // 可选的, 默认值是 true,
-        // sidebarDepth: 1,    // 可选的, 默认值是 1
+        title: '指南',
+        collapsable: false,
         children: [
           '/introduce/introduce',
           '/introduce/startup'
@@ -32,7 +30,7 @@ module.exports = {
           '/components/layout',
           '/components/toast',
           '/components/popover',
-          '/components/collapse',
+          '/components/collapse'
         ]
       }
     ]
