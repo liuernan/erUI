@@ -53,7 +53,40 @@ new Vue({
     loading2: false,
     message: '支持双向绑定',
     selectedTab: 'live',
-    selectedCollapses: ['标题2']
+    selectedCollapses: ['标题2'],
+    source: [{
+      label: '浙江',
+      children: [
+        {
+          label: '杭州',
+          children: [
+            {label: '上城'},
+            {label: '下城'},
+            {label: '江干'},
+          ]
+        },
+        {
+          label: '嘉兴',
+          children: [
+            {label: '南湖'},
+            {label: '秀洲'},
+            {label: '嘉善'},
+          ]
+        },
+      ]
+    }, {
+      label: '福建',
+      children: [
+        {
+          label: '福州',
+          children: [
+            {label: '鼓楼'},
+            {label: '台江'},
+            {label: '仓山'},
+          ]
+        },
+      ]
+    }]
   },
   methods: {
     testToastTop() {
