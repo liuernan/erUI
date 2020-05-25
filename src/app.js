@@ -10,8 +10,8 @@ import Header from './header';
 import Sider from './sider';
 import Content from './content';
 import Footer from './footer';
-import Toast from './toast'
-import Plugin from './plugin'
+import Toast from './toast';
+import Plugin from './plugin';
 import Tabs from './tabs';
 import TabsNav from './tabs-nav';
 import TabsItem from './tabs-item';
@@ -20,6 +20,7 @@ import TabsPanel from './tabs-panel';
 import Popover from './popover';
 import Collapse from './collapse';
 import CollapseItem from './collapse-item';
+import Cascader from './cascader';
 
 Vue.component('er-button', Button);
 Vue.component('er-icon', Icon);
@@ -41,6 +42,7 @@ Vue.component('er-tabs-panel', TabsPanel);
 Vue.component('er-popover', Popover);
 Vue.component('er-collapse', Collapse);
 Vue.component('er-collapse-item', CollapseItem);
+Vue.component('er-cascader', Cascader);
 
 Vue.use(Plugin);
 
