@@ -20,24 +20,6 @@
 
   以上 CSS 语法 IE 8 以上支持
   
-  * 很挫的第二步：使用本框架前，请先在你的项目中给本框架的样式添加下面的变量，变量值可以自己修改
-  
-  ```CSS
-  :root {
-    --button-height: 32px;
-    --font-size: 14px;
-    --button-bg: white;
-    --button-active-bg: #eee;
-    --border-radius: 4px;
-    --color: #333;
-    --border-color: #999;
-    --border-color-hover: #666;
-  }
-  ```
-  * 依然很挫的第三步：使用本框架前，请现在你的项目中添加下面内容以引入 svg 图片
-  ```javascript
-  <script src="//at.alicdn.com/t/font_257057_9befwojds45.js"></script>  
-  ```
   * 安装（此时我已经假定你的项目是通过 Vue-Cli 来创建的，如果不是，那么不保证我的框架你可以安装成功）
   ```
   npm install er-ui-demo
@@ -60,7 +42,7 @@
 
 ## 问题交流
 
-  请直接在 GitHub 上直接提 issue
+  请在 GitHub 上提 issue
 
 ## 版本日志
 
