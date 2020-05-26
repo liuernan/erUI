@@ -34,11 +34,13 @@
       border: 1px solid skyblue;
       height: 32px;
       width: 200px;
-
+      position: relative;
     }
 
     .er-cascader-content {
-
+      background-color: #fff;
+      position: absolute;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     }
   }
 </style>
