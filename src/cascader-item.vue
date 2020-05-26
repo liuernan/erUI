@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div v-for="item in itemsArr" class="er-cascader-item">
+  <div class="er-cascader-item">
+    <div class="left" v-for="item in itemsArr" @click="leftSelected = item">
       {{item.label}}
-      <er-cascader-item v-if="item.children" :itemsArr="item.children"></er-cascader-item>
+    </div>
+    <div class="right" v-if="rightItem">
+      <er-cascader-item :itemsArr="rightItem"></er-cascader-item>
     </div>
   </div>
 </template>
@@ -13,6 +15,20 @@
     props: {
       itemsArr: {
         type: Array
+      }
+    },
+    data() {
+      return {
+        leftSelected: null
+      }
+    },
+    computed: {
+      rightItem() {
+        if (this.leftSelected && this.leftSelected.children) {
+          return this.leftSelected.children
+        } else {
+          return null
+        }
       }
     }
   }
