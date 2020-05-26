@@ -1,5 +1,5 @@
 <template>
-  <div class="er-cascader-item">
+  <div class="er-cascader-item" :style="{height: this.panelHeight + 'px'}">
     <div class="left">
       <div class="label" v-for="item in itemsArr" @click="leftSelected = item">
         {{item.label}}
@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="right" v-if="rightItem">
-      <er-cascader-item :itemsArr="rightItem"></er-cascader-item>
+      <er-cascader-item :itemsArr="rightItem" :panel-height="panelHeight"></er-cascader-item>
     </div>
   </div>
 </template>
@@ -17,9 +17,16 @@
 
   export default {
     name: "ErCascaderItem",
+    components: {
+      'er-icon': Icon
+    },
     props: {
       itemsArr: {
         type: Array
+      },
+      panelHeight: {
+        type: String,
+        default: '100'
       }
     },
     data() {
@@ -35,9 +42,6 @@
           return null
         }
       }
-    },
-    components: {
-      'er-icon': Icon
     }
   }
 </script>
@@ -47,7 +51,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 100px;
 
     .left {
       white-space: nowrap;

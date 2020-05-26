@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="er-cascader-content" v-if="contentVisiable">
-      <er-cascader-item :itemsArr="source"></er-cascader-item>
+      <er-cascader-item :itemsArr="source" :panel-height="panelHeight"></er-cascader-item>
     </div>
   </div>
 </template>
@@ -19,6 +19,10 @@
     props: {
       source: {
         type: Array
+      },
+      panelHeight: {
+        type: String,
+        default: '100'
       }
     },
     data() {
