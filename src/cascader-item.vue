@@ -71,7 +71,7 @@
     }
 
     .right {
-      border-left: 1px solid lightgray;
+      border-left: 1px solid $border-color-light;
     }
   }
 </style>
