@@ -33,6 +33,8 @@
   }
 </script>
 <style lang="scss" scoped>
+  @import "var";
+
   .er-cascader {
     .er-cascader-trigger {
       border: 1px solid skyblue;

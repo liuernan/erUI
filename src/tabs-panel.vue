@@ -28,8 +28,8 @@
   }
 </script>
 <style lang="scss" scoped>
-  $tabs-panel-height: 200px;
-  $tabs-panel-border: 1px solid #999;
+  @import "var";
+
   .tabs-panel {
     height: $tabs-panel-height;
     border: $tabs-panel-border;

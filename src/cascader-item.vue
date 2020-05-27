@@ -47,6 +47,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "var";
+
   .er-cascader-item {
     display: flex;
     align-items: flex-start;
@@ -59,6 +61,7 @@
       .label {
         display: flex;
         align-items: center;
+
         .icon {
           margin-right: -.5em;
           transform: scale(0.5);

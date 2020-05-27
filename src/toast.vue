@@ -65,10 +65,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  $font-size: 14px;
-  $toast-min-height: 30px;
-  $toast-bg: rgba(0, 0, 0, 0.75);
-  $animation-duration: .3s;
+  @import "var";
 
   @keyframes slide-down {
     0% {

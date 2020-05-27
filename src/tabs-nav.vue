@@ -12,11 +12,13 @@
   }
 </script>
 <style lang="scss" scoped>
-  $tabs-nav-height: 60px;
+  @import "var";
+
   .er-tabs-nav {
     display: flex;
     align-items: flex-end;
     height: $tabs-nav-height;
+
     > .er-nav-button-wrapper {
       margin-left: auto;
     }

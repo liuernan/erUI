@@ -51,19 +51,14 @@
   }
 </script>
 <style lang="scss" scoped>
-  $height: 30px;
-  $border-color: #999;
-  $border-color-hover: #666;
-  $box-shadow-color: rgba(0, 0, 0, .5);
-  $error-color: #F1453D;
-  $tips-color: lightgreen;
+  @import "var";
 
   .warpper {
     display: inline-flex;
     align-items: center;
 
     > input {
-      height: $height;
+      height: $input-height;
       border: 1px solid $border-color;
       font-size: inherit;
       padding: 0 8px;
@@ -75,7 +70,7 @@
 
       &:focus {
         outline: none;
-        box-shadow: inset 0 1px 2px $box-shadow-color;
+        box-shadow: inset 0 1px 2px $box-shadow;
       }
 
       &[disabled],

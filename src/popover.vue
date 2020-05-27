@@ -2,7 +2,7 @@
   <div class="popover">
     <div class="popover-content-wrapper" :class="{[`popover-${position}`]: true}" ref="popoverContentWrapper"
          v-if="visible">
-      <slot name="popover-content" :close="close" ></slot>
+      <slot name="popover-content" :close="close"></slot>
     </div>
     <div ref="popoverTriggerWrapper">
       <slot></slot>
@@ -110,10 +110,8 @@
 </script>
 
 <style lang="scss" scoped>
-  $popover-border-color: gray;
-  $popover-border-radius: 4px;
-  $popover-max-width: 20em;
-  $popover-box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+  @import "var";
+
   .popover {
     display: inline-block;
     position: relative;
@@ -124,9 +122,9 @@
     padding: .5em 1em;
     max-width: $popover-max-width;
     word-break: break-all;
-    border: 1px solid $popover-border-color;
-    border-radius: $popover-border-radius;
-    filter: drop-shadow($popover-box-shadow);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    filter: drop-shadow($box-shadow);
     background: #fff;
 
     &::before,
@@ -144,7 +142,7 @@
       margin-top: -10px;
 
       &::before {
-        border-top-color: $popover-border-color;
+        border-top-color: $border-color;
         top: 100%;
         border-bottom: none;
       }
@@ -160,7 +158,7 @@
       margin-top: 10px;
 
       &::before {
-        border-bottom-color: $popover-border-color;
+        border-bottom-color: $border-color;
         bottom: 100%;
         border-top: none;
       }
@@ -182,7 +180,7 @@
       }
 
       &::before {
-        border-left-color: $popover-border-color;
+        border-left-color: $border-color;
         left: 100%;
         border-right: none;
       }
@@ -203,7 +201,7 @@
       }
 
       &::before {
-        border-right-color: $popover-border-color;
+        border-right-color: $border-color;
         right: 100%;
         border-left: none;
       }

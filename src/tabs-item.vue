@@ -40,17 +40,15 @@
     methods: {
       clickItem() {
         if (this.disabled) return false;
-        this.eventHub &&  this.eventHub.$emit('update:selected', this.name);
+        this.eventHub && this.eventHub.$emit('update:selected', this.name);
         this.$emit('click', this);
       }
     }
   }
 </script>
 <style lang="scss" scoped>
-  $tabs-item-height: 40px;
-  $tabs-item-active-bg: lightpink;
-  $tabs-item-disabled-bg: lightgray;
-  $tabs-item-border: 1px solid #999;
+  @import "var";
+
   .tabs-item {
     padding: 0 1em;
     height: $tabs-item-height;
