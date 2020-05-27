@@ -67,7 +67,6 @@
           transform: scale(0.5);
         }
       }
-
     }
 
     .right {
