@@ -5,11 +5,11 @@ import Vue from 'vue';
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
 
-import Tabs from '../src/tabs';
-import TabsNav from '../src/tabs-nav';
-import TabsItem from '../src/tabs-item';
-import TabsContent from '../src/tabs-content';
-import TabsPanel from '../src/tabs-panel';
+import Tabs from '../src/components/tabs';
+import TabsNav from '../src/components/tabs-nav';
+import TabsItem from '../src/components/tabs-item';
+import TabsContent from '../src/components/tabs-content';
+import TabsPanel from '../src/components/tabs-panel';
 Vue.component('er-tabs', Tabs);
 Vue.component('er-tabs-nav', TabsNav);
 Vue.component('er-tabs-item', TabsItem);

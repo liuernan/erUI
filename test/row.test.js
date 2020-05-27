@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import Row from '../src/row';
-import Col from '../src/col';
+import Row from '../src/components/row';
+import Col from '../src/components/col';
 
 const expect = chai.expect;
 

@@ -1,6 +1,6 @@
 const expect = chai.expect;
 import Vue from 'vue';
-import TabsNav from '../src/tabs-nav';
+import TabsNav from '../src/components/tabs-nav';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
