@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import Collapse from '../src/components/collapse';
-import CollapseItem from '../src/components/collapse-item'
+import Collapse from '../../src/components/collapse';
+import CollapseItem from '../../src/components/collapse-item'
 
 Vue.component('er-collapse', Collapse);
 Vue.component('er-collapse-item', CollapseItem);

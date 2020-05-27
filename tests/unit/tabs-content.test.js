@@ -1,12 +1,12 @@
 const expect = chai.expect;
 import Vue from 'vue';
-import TabsNav from '../src/components/tabs-nav';
+import TabsContent from '../../src/components/tabs-content';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
 
-describe('TabsNav', () => {
+describe('TabsContent', () => {
   it('存在.', () => {
-    expect(TabsNav).to.be.exist;
+    expect(TabsContent).to.be.exist;
   })
 });
