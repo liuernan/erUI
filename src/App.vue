@@ -8,11 +8,10 @@
 <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
 <!--    </div>-->
     <div style="padding: 20px;border: 1px solid red;">
-      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
-      <er-cascader :source="source" panel-height="200">
+      <p>{{value}}</p>
+      <er-cascader :source="source" panel-height="200" @change="onChange">
         <er-input></er-input>
       </er-cascader>
-      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
 
     <div style="padding: 20px">
@@ -306,22 +305,20 @@
               ]
             },
           ]
-        }]
+        }],
+        value:[]
       }
     },
     methods: {
       testToastTop() {
         this.testToast('top');
       },
-
       testToastMiddle() {
         this.testToast('middle');
       },
-
       testToastBottom() {
         this.testToast('bottom');
       },
-
       testToast(position) {
         this.$toast('我是一个 toast', {
           autoClose: 50,
@@ -334,11 +331,13 @@
           }
         })
       },
-
       selecteCollapse(arr, vm) {
         // console.log(arr);
         // console.log(vm);
         // console.log('chufale');
+      },
+      onChange(selected){
+        this.value = selected;
       }
     }
   }

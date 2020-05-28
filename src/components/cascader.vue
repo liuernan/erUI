@@ -5,7 +5,7 @@
     </div>
     <div class="er-cascader-content" v-if="contentVisiable">
       <er-cascader-item :source="source" :panel-height="panelHeight"
-                        :selected="selected" @update:selected="selected = $event"
+                        :selected="selected" @update:selected="onUpdateSelected"
       ></er-cascader-item>
     </div>
   </div>
@@ -31,6 +31,12 @@
       return {
         contentVisiable: false,
         selected: []
+      }
+    },
+    methods: {
+      onUpdateSelected($event) {
+        this.selected = $event;
+        this.$emit('change', this.selected);
       }
     }
   }
