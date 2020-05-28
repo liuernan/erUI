@@ -1,13 +1,15 @@
 <template>
   <div class="er-cascader-item" :style="{height: this.panelHeight + 'px'}">
     <div class="left">
-      <div class="label" v-for="item in source" @click="leftSelected = item">
+      <div class="label" v-for="item in source" @click="onClickItem(item)">
         {{item.label}}
         <er-icon v-if="item.children" name="right" class="icon"></er-icon>
       </div>
     </div>
     <div class="right" v-if="rightItem">
-      <er-cascader-item :source="rightItem" :panel-height="panelHeight"></er-cascader-item>
+      <er-cascader-item :source="rightItem" :panel-height="panelHeight" :level="level + 1"
+                        :selected="selected" @update:selected="onUpdateSelected"
+      ></er-cascader-item>
     </div>
   </div>
 </template>
@@ -24,23 +26,36 @@
       source: {
         type: Array
       },
+      level: {
+        type: Number,
+        default: 0
+      },
+      selected: {
+        type: Array
+      },
       panelHeight: {
         type: String,
         default: '100'
       }
     },
-    data() {
-      return {
-        leftSelected: null
-      }
-    },
     computed: {
       rightItem() {
-        if (this.leftSelected && this.leftSelected.children) {
-          return this.leftSelected.children
+        const currentSelected = this.selected[this.level];
+        if (currentSelected && currentSelected.children) {
+          return currentSelected.children
         } else {
           return null
         }
+      }
+    },
+    methods: {
+      onClickItem(item){
+        const newSelected = JSON.parse(JSON.stringify(this.selected));
+        newSelected[this.level] = item;
+        this.$emit('update:selected', newSelected);
+      },
+      onUpdateSelected(newSelected){
+        this.$emit('update:selected', newSelected)
       }
     }
   }

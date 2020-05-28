@@ -4,7 +4,9 @@
       <slot></slot>
     </div>
     <div class="er-cascader-content" v-if="contentVisiable">
-      <er-cascader-item :source="source" :panel-height="panelHeight"></er-cascader-item>
+      <er-cascader-item :source="source" :panel-height="panelHeight"
+                        :selected="selected" @update:selected="selected = $event"
+      ></er-cascader-item>
     </div>
   </div>
 </template>
@@ -27,7 +29,8 @@
     },
     data() {
       return {
-        contentVisiable: false
+        contentVisiable: false,
+        selected: []
       }
     }
   }
