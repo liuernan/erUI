@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="er-cascader-content" v-if="contentVisiable">
-      <er-cascader-item :itemsArr="source" :panel-height="panelHeight"></er-cascader-item>
+      <er-cascader-item :source="source" :panel-height="panelHeight"></er-cascader-item>
     </div>
   </div>
 </template>

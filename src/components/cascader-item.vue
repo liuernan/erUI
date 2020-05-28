@@ -1,13 +1,13 @@
 <template>
   <div class="er-cascader-item" :style="{height: this.panelHeight + 'px'}">
     <div class="left">
-      <div class="label" v-for="item in itemsArr" @click="leftSelected = item">
+      <div class="label" v-for="item in source" @click="leftSelected = item">
         {{item.label}}
         <er-icon v-if="item.children" name="right" class="icon"></er-icon>
       </div>
     </div>
     <div class="right" v-if="rightItem">
-      <er-cascader-item :itemsArr="rightItem" :panel-height="panelHeight"></er-cascader-item>
+      <er-cascader-item :source="rightItem" :panel-height="panelHeight"></er-cascader-item>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@
       'er-icon': Icon
     },
     props: {
-      itemsArr: {
+      source: {
         type: Array
       },
       panelHeight: {
