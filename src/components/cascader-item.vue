@@ -52,6 +52,7 @@
       onClickItem(item){
         const newSelected = JSON.parse(JSON.stringify(this.selected));
         newSelected[this.level] = item;
+        newSelected.splice(this.level +1);
         this.$emit('update:selected', newSelected);
       },
       onUpdateSelected(newSelected){
