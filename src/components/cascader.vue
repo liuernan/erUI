@@ -77,7 +77,7 @@
     .er-cascader-content {
       background-color: #fff;
       position: absolute;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      box-shadow: $box-shadow;
     }
   }
 </style>

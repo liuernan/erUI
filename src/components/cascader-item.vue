@@ -2,7 +2,7 @@
   <div class="er-cascader-item" :style="{height: this.panelHeight + 'px'}">
     <div class="left">
       <div class="label" v-for="item in source" @click="onClickItem(item)">
-        {{item.label}}
+        <span>{{item.label}}</span>
         <er-icon v-if="item.children" name="right" class="icon"></er-icon>
       </div>
     </div>
@@ -49,13 +49,13 @@
       }
     },
     methods: {
-      onClickItem(item){
+      onClickItem(item) {
         const newSelected = JSON.parse(JSON.stringify(this.selected));
         newSelected[this.level] = item;
-        newSelected.splice(this.level +1);
+        newSelected.splice(this.level + 1);
         this.$emit('update:selected', newSelected);
       },
-      onUpdateSelected(newSelected){
+      onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
       }
     }
@@ -72,11 +72,16 @@
 
     .left {
       white-space: nowrap;
-      padding: .5em 1em;
 
       .label {
         display: flex;
         align-items: center;
+        cursor: pointer;
+        padding: .3em 1em;
+        user-select: none;
+        &:hover {
+          background-color: $border-color-light;
+        }
 
         .icon {
           margin-right: -.5em;
