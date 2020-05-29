@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-<!--    <div style="padding: 20px;border: 1px solid red;">-->
-<!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-<!--      <er-cascader :source="source">-->
-<!--        <er-input></er-input>-->
-<!--      </er-cascader>-->
-<!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-<!--    </div>-->
+    <!--    <div style="padding: 20px;border: 1px solid red;">-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--      <er-cascader :source="source" panel-height="200">-->
+    <!--        <er-input></er-input>-->
+    <!--      </er-cascader>-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--    </div>-->
     <div style="padding: 20px;border: 1px solid red;">
       <p>{{value}}</p>
-      <er-cascader :source="source" panel-height="200" @change="onChange">
-        <er-input></er-input>
+      <er-cascader :source="source" panel-height="200" @change="onChange"
+                   placeholder="点击选择">
       </er-cascader>
     </div>
 
@@ -306,7 +306,7 @@
             },
           ]
         }],
-        value:[]
+        value: []
       }
     },
     methods: {
@@ -336,7 +336,7 @@
         // console.log(vm);
         // console.log('chufale');
       },
-      onChange(selected){
+      onChange(selected) {
         this.value = selected;
       }
     }
