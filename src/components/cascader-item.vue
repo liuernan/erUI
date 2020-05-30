@@ -42,7 +42,7 @@
       rightItem() {
         if (this.selected[this.level]) {
           const currentSelected = this.source.find((item)=>{ return item.value === this.selected[this.level].value});
-          if (currentSelected && currentSelected.children) {
+          if (currentSelected && currentSelected.children && currentSelected.children.length) {
             return currentSelected.children;
           } else {
             return null
