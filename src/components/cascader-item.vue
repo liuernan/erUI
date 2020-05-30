@@ -3,7 +3,7 @@
     <div class="left">
       <div class="label" v-for="item in source" @click="onClickItem(item)">
         <span>{{item.label}}</span>
-        <er-icon v-if="item.children" name="right" class="icon"></er-icon>
+        <er-icon v-if="item.children || !item.isLeaf" name="right" class="icon"></er-icon>
       </div>
     </div>
     <div class="right" v-if="rightItem">

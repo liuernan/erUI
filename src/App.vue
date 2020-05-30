@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <!--    <div style="padding: 20px;border: 1px solid red;">-->
-    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-    <!--      <er-cascader :source="source" panel-height="200">-->
-    <!--        <er-input></er-input>-->
-    <!--      </er-cascader>-->
-    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-    <!--    </div>-->
     <div style="padding: 20px;border: 1px solid red;">
-      <p>{{cascaderResult}}</p>
       <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
-      <er-cascader :source="source" panel-height="200" @change="onChange">
+      <er-cascader :source="sourceSync" :load-data="loadCascaderData" panel-height="200" @change="onChange">
       </er-cascader>
       <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
+    <!--    <div style="padding: 20px;border: 1px solid red;">-->
+    <!--      <p>{{cascaderResult}}</p>-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--      <er-cascader :source="source" panel-height="200" @change="onChange">-->
+    <!--      </er-cascader>-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--    </div>-->
 
     <div style="padding: 20px">
       <er-collapse :selected.sync="selectedCollapses" @update:selected="selecteCollapse" multiple>
@@ -264,6 +263,16 @@
 </template>
 
 <script>
+  // cascader test data  --start
+  import cascaderData from './assets/chinese-regions';
+
+  const ajax = () => {
+    setTimeout(() => {
+      return cascaderData;
+    }, 1000)
+  };
+  // cascader test data --end
+
   export default {
     name: 'App',
     components: {},
@@ -339,6 +348,15 @@
             },
           ]
         }],
+        sourceSync: [{
+          value: 'zhejiang',
+          label: '浙江',
+          isLeaf: false
+        }, {
+          value: 'fujian',
+          label: '福建',
+          isLeaf: false
+        }],
         cascaderResult: []
       }
     },
@@ -371,6 +389,24 @@
       },
       onChange(value) {
         this.cascaderResult = value;
+      },
+      loadCascaderData(selecetdItems, callback) {
+        // ajax();
+        const selectedItem = selecetdItems[selecetdItems.length - 1];
+        setTimeout(() => {
+          selectedItem.children = [
+            {
+              value: 'sync1',
+              label: '动态1',
+              isLeaf: false
+            },
+            {
+              value: 'sync2',
+              label: '动态2',
+              isLeaf: false
+            }
+          ];
+        }, 1000);
       }
     }
   }

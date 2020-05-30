@@ -32,6 +32,9 @@
       },
       placeholder: {
         type: String
+      },
+      loadData: {
+        type: Function
       }
     },
     data() {
@@ -55,6 +58,9 @@
     methods: {
       onUpdateSelected($event) {
         this.selected = $event;
+        if (this.loadData) {
+          this.loadData($event);
+        }
         this.$emit('change', this.selectedValue.split('/'));
       }
     }
