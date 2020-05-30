@@ -38,19 +38,10 @@
         default: '100'
       }
     },
-    updated() {
-      console.log('item 更新了');
-    },
     computed: {
       rightItem() {
         if (this.selected[this.level]) {
           const currentSelected = this.source.find((item)=>{ return item.value === this.selected[this.level].value});
-          console.log('这时候的source');
-          console.log(JSON.stringify(this.source));
-          console.log('这时候被选中的');
-          console.log(JSON.stringify(currentSelected));
-          console.log('这时候的 children');
-          console.log(JSON.stringify(currentSelected.children));
           if (currentSelected && currentSelected.children) {
             return currentSelected.children;
           } else {

@@ -394,7 +394,6 @@
         // ajax();
         const selectedItem = selecetdItems[selecetdItems.length - 1];
         setTimeout(() => {
-          console.log('请求了');
           selectedItem.children = [
             {
               value: 'sync1',
