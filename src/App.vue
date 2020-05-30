@@ -404,8 +404,7 @@
             {
               value: 'sync2',
               label: '动态2',
-              isLeaf: false,
-              children: []
+              isLeaf: true
             }
           ];
           this.sourceSync = [...this.sourceSync];

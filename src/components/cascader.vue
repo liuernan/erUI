@@ -57,7 +57,7 @@
     },
     methods: {
       onUpdateSelected($event) {
-        if (this.loadData) {
+        if (this.loadData && !$event[$event.length - 1].isLeaf) {
           this.loadData($event);
         }
         this.$emit('change', this.selectedValue.split('/'));
