@@ -9,7 +9,7 @@
     </div>
     <div class="er-cascader-content" v-if="contentVisiable">
       <er-cascader-item :source="source" :panel-height="panelHeight"
-                        :selected="selected" @update:selected="onUpdateSelected"
+                        :selected.sync="selected" @update:selected="onUpdateSelected"
       ></er-cascader-item>
     </div>
   </div>
@@ -57,7 +57,6 @@
     },
     methods: {
       onUpdateSelected($event) {
-        this.selected = $event;
         if (this.loadData) {
           this.loadData($event);
         }
