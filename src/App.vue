@@ -350,12 +350,14 @@
         }],
         sourceSync: [{
           value: 'zhejiang',
-          label: '浙江',
-          isLeaf: false
+          label: '浙 江',
+          isLeaf: false,
+          children: []
         }, {
           value: 'fujian',
           label: '福建',
-          isLeaf: false
+          isLeaf: false,
+          children: []
         }],
         cascaderResult: []
       }
@@ -407,7 +409,7 @@
               isLeaf: true
             }
           ];
-          this.sourceSync = [...this.sourceSync];
+          // this.sourceSync = [...this.sourceSync];
         }, 1000);
       }
     }
