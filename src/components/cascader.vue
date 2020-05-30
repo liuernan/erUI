@@ -2,8 +2,8 @@
   <div class="er-cascader">
     <div class="er-cascader-trigger" @click="contentVisiable = !contentVisiable">
       <slot></slot>
-      <span v-if="value.length">
-        {{value}}
+      <span v-if="selectedLabel.length">
+        {{selectedLabel}}
       </span>
       <span v-else class="placeHolder">{{placeholder}}</span>
     </div>
@@ -41,16 +41,21 @@
       }
     },
     computed: {
-      value() {
+      selectedLabel() {
         return this.selected.map((item) => {
           return item.label
+        }).join('/');
+      },
+      selectedValue() {
+        return this.selected.map((item) => {
+          return item.value
         }).join('/');
       }
     },
     methods: {
       onUpdateSelected($event) {
         this.selected = $event;
-        this.$emit('change', this.value.split('/'));
+        this.$emit('change', this.selectedValue.split('/'));
       }
     }
   }

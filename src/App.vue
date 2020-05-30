@@ -8,10 +8,11 @@
     <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
     <!--    </div>-->
     <div style="padding: 20px;border: 1px solid red;">
-      <p>{{value}}</p>
-      <er-cascader :source="source" panel-height="200" @change="onChange"
-                   >
+      <p>{{cascaderResult}}</p>
+      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
+      <er-cascader :source="source" panel-height="200" @change="onChange">
       </er-cascader>
+      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
 
     <div style="padding: 20px">
@@ -274,39 +275,71 @@
         selectedTab: 'live',
         selectedCollapses: ['标题2'],
         source: [{
+          value: 'zhejiang',
           label: '浙江',
           children: [
             {
+              value: 'hangzhou',
               label: '杭州',
               children: [
-                {label: '上城'},
-                {label: '下城'},
-                {label: '江干'},
+                {
+                  value: 'shangcheng',
+                  label: '上城'
+                },
+                {
+                  value: 'xiacheng',
+                  label: '下城'
+                },
+                {
+                  value: 'jianggan',
+                  label: '江干'
+                },
               ]
             },
             {
+              value: 'jiaxing',
               label: '嘉兴',
               children: [
-                {label: '南湖'},
-                {label: '秀洲'},
-                {label: '嘉善'},
+                {
+                  value: 'nanhu',
+                  label: '南湖'
+                },
+                {
+                  value: 'xiuzhou',
+                  label: '秀洲'
+                },
+                {
+                  value: 'jiashan',
+                  label: '嘉善'
+                },
               ]
             },
           ]
         }, {
+          value: 'fujian',
           label: '福建',
           children: [
             {
+              value: 'fuzhou',
               label: '福州',
               children: [
-                {label: '鼓楼'},
-                {label: '台江'},
-                {label: '仓山'},
+                {
+                  value: 'gulou',
+                  label: '鼓楼'
+                },
+                {
+                  value: 'taijiang',
+                  label: '台江'
+                },
+                {
+                  value: 'cangshan',
+                  label: '仓山'
+                },
               ]
             },
           ]
         }],
-        value: []
+        cascaderResult: []
       }
     },
     methods: {
@@ -336,8 +369,8 @@
         // console.log(vm);
         // console.log('chufale');
       },
-      onChange(selected) {
-        this.value = selected;
+      onChange(value) {
+        this.cascaderResult = value;
       }
     }
   }
