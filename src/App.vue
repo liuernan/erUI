@@ -399,12 +399,14 @@
             {
               value: 'sync1',
               label: '动态1',
-              isLeaf: false
+              isLeaf: false,
+              children: []
             },
             {
               value: 'sync2',
               label: '动态2',
-              isLeaf: false
+              isLeaf: false,
+              children: []
             }
           ];
           this.sourceSync = [...this.sourceSync];
