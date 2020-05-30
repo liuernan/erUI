@@ -6,13 +6,13 @@
       </er-cascader>
       <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
-    <!--    <div style="padding: 20px;border: 1px solid red;">-->
-    <!--      <p>{{cascaderResult}}</p>-->
-    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-    <!--      <er-cascader :source="source" panel-height="200" @change="onChange">-->
-    <!--      </er-cascader>-->
-    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
-    <!--    </div>-->
+    <div style="padding: 20px;border: 1px solid red;">
+      <p>{{cascaderResult}}</p>
+      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
+      <er-cascader :source="source" panel-height="200" @change="onChange">
+      </er-cascader>
+      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
+    </div>
 
     <div style="padding: 20px">
       <er-collapse :selected.sync="selectedCollapses" @update:selected="selecteCollapse" multiple>

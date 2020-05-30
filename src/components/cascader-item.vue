@@ -3,7 +3,7 @@
     <div class="left">
       <div class="label" v-for="item in source" @click="onClickItem(item)">
         <span>{{item.label}}</span>
-        <er-icon v-if="item.children || !item.isLeaf" name="right" class="icon"></er-icon>
+        <er-icon v-if="leafArrowVisible(item)" name="right" class="icon"></er-icon>
       </div>
     </div>
     <div class="right" v-if="rightItem">
@@ -41,7 +41,9 @@
     computed: {
       rightItem() {
         if (this.selected[this.level]) {
-          const currentSelected = this.source.find((item)=>{ return item.value === this.selected[this.level].value});
+          const currentSelected = this.source.find((item) => {
+            return item.value === this.selected[this.level].value
+          });
           if (currentSelected && currentSelected.children && currentSelected.children.length) {
             return currentSelected.children;
           } else {
@@ -59,6 +61,9 @@
       },
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
+      },
+      leafArrowVisible(item) {
+        return this.loadData ? !item.isLeaf : item.children;
       }
     }
   }
@@ -81,6 +86,7 @@
         cursor: pointer;
         padding: .3em 1em;
         user-select: none;
+
         &:hover {
           background-color: $border-color-light;
         }
