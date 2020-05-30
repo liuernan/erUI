@@ -31,8 +31,7 @@
         default: '100'
       },
       placeholder: {
-        type: String,
-        default: '请选择'
+        type: String
       }
     },
     data() {

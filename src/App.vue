@@ -10,7 +10,7 @@
     <div style="padding: 20px;border: 1px solid red;">
       <p>{{value}}</p>
       <er-cascader :source="source" panel-height="200" @change="onChange"
-                   placeholder="挑一个呗">
+                   >
       </er-cascader>
     </div>
 
