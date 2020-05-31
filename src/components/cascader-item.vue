@@ -9,6 +9,7 @@
     <div class="right" v-if="rightItem">
       <er-cascader-item :source="rightItem" :panel-height="panelHeight" :level="level + 1"
                         :selected="selected" @update:selected="onUpdateSelected"
+                        :load-data="loadData"
       ></er-cascader-item>
     </div>
   </div>
@@ -36,6 +37,9 @@
       panelHeight: {
         type: String,
         default: '100'
+      },
+      loadData: {
+        type: Function
       }
     },
     computed: {

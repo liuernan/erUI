@@ -10,6 +10,7 @@
     <div class="er-cascader-content" v-if="contentVisiable">
       <er-cascader-item :source="source" :panel-height="panelHeight"
                         :selected.sync="selected" @update:selected="onUpdateSelected"
+                        :load-data="loadData"
       ></er-cascader-item>
     </div>
   </div>
