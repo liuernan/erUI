@@ -6,13 +6,13 @@
       </er-cascader>
       <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
-    <div style="padding: 20px;border: 1px solid red;">
-      <p>{{cascaderResult}}</p>
-      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
-      <er-cascader :source="source" panel-height="200" @change="onChange">
-      </er-cascader>
-      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
-    </div>
+    <!--    <div style="padding: 20px;border: 1px solid red;">-->
+    <!--      <p>{{cascaderResult}}</p>-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--      <er-cascader :source="source" panel-height="200" @change="onChange">-->
+    <!--      </er-cascader>-->
+    <!--      <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>-->
+    <!--    </div>-->
 
     <div style="padding: 20px">
       <er-collapse :selected.sync="selectedCollapses" @update:selected="selecteCollapse" multiple>
@@ -266,9 +266,15 @@
   // cascader test data  --start
   import cascaderData from './assets/chinese-regions';
 
-  const ajax = () => {
+  const ajax = ({id = 0}, callback) => {
     setTimeout(() => {
-      return cascaderData;
+      let children = [];
+      children = cascaderData.filter((item) => {
+        return item.parent_id === id
+      });
+      console.log(children);
+      children.forEach((item)=>{item.children = []});
+      callback(children)
     }, 1000)
   };
   // cascader test data --end
@@ -349,13 +355,8 @@
           ]
         }],
         sourceSync: [{
-          value: 'zhejiang',
-          label: '浙 江',
-          isLeaf: false,
-          children: []
-        }, {
-          value: 'fujian',
-          label: '福建',
+          value: 'init',
+          label: '初始化先传一个',
           isLeaf: false,
           children: []
         }],
@@ -395,22 +396,25 @@
       loadCascaderData(selecetdItems, callback) {
         // ajax();
         const selectedItem = selecetdItems[selecetdItems.length - 1];
-        setTimeout(() => {
-          selectedItem.children = [
-            {
-              value: 'sync1',
-              label: '动态1',
-              isLeaf: false,
-              children: []
-            },
-            {
-              value: 'sync2',
-              label: '动态2',
-              isLeaf: true
-            }
-          ];
-          // this.sourceSync = [...this.sourceSync];
-        }, 1000);
+        ajax(selectedItem, (children) => {
+          selectedItem.children = children;
+        });
+        // setTimeout(() => {
+        //   selectedItem.children = [
+        //     {
+        //       value: 'sync1',
+        //       label: '动态1',
+        //       isLeaf: false,
+        //       children: []
+        //     },
+        //     {
+        //       value: 'sync2',
+        //       label: '动态2',
+        //       isLeaf: true
+        //     }
+        //   ];
+        //   // this.sourceSync = [...this.sourceSync];
+        // }, 1000);
       }
     }
   }

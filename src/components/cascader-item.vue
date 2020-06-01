@@ -80,9 +80,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-
+    height: 100%;
     .left {
       white-space: nowrap;
+      height: 100%;
+      overflow: auto;
 
       .label {
         display: flex;
@@ -104,6 +106,7 @@
 
     .right {
       border-left: 1px solid $border-color-light;
+      height: 100%;
     }
   }
 </style>

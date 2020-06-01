@@ -88,6 +88,7 @@
       background-color: #fff;
       position: absolute;
       box-shadow: $box-shadow;
+      display: flex;
     }
   }
 </style>
