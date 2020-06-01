@@ -1,6 +1,6 @@
 <template>
-  <div class="er-cascader">
-    <div class="er-cascader-trigger" @click="contentVisiable = !contentVisiable">
+  <div class="er-cascader" ref="cascader">
+    <div class="er-cascader-trigger" @click="toggle">
       <slot></slot>
       <span v-if="selectedLabel.length">
         {{selectedLabel}}
@@ -62,6 +62,29 @@
           this.loadData($event);
         }
         this.$emit('change', this.selectedValue.split('/'));
+      },
+      toggle() {
+        if (this.contentVisiable) {
+          this.close();
+        } else {
+          this.open();
+        }
+      },
+      clickOutside(e) {
+        if (this.$refs.cascader.contains(e.target)) {
+          return
+        } else {
+          this.close();
+        }
+      },
+      open() {
+        this.contentVisiable = true;
+        document.addEventListener('click', this.clickOutside);
+      },
+      close() {
+        console.log('closed');
+        this.contentVisiable = false;
+        document.removeEventListener('click', this.clickOutside);
       }
     }
   }
@@ -71,6 +94,7 @@
 
   .er-cascader {
     position: relative;
+    display: inline-block;
 
     .er-cascader-trigger {
       border: 1px solid $border-color;
@@ -79,7 +103,8 @@
       align-items: center;
       padding: 0 1em;
       min-width: $input-min-width;
-      .placeHolder{
+
+      .placeHolder {
         color: $color-light;
       }
     }
