@@ -9,7 +9,7 @@
     <div class="right" v-if="rightItem">
       <er-cascader-item :source="rightItem" :panel-height="panelHeight" :level="level + 1"
                         :selected="selected" @update:selected="onUpdateSelected"
-                        :load-data="loadData"
+                        :load-data="loadData" :close="close"
       ></er-cascader-item>
     </div>
   </div>
@@ -40,6 +40,9 @@
       },
       loadData: {
         type: Function
+      },
+      close: {
+        type: Function
       }
     },
     computed: {
@@ -62,6 +65,7 @@
         newSelected[this.level] = item;
         newSelected.splice(this.level + 1);
         this.$emit('update:selected', newSelected);
+        item.isLeaf && this.close();
       },
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
