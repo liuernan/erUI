@@ -265,15 +265,17 @@
 <script>
   // cascader test data  --start
   import cascaderData from './assets/chinese-regions';
-
   const ajax = ({id = 0}, callback) => {
     setTimeout(() => {
       let children = [];
       children = cascaderData.filter((item) => {
         return item.parent_id === id
       });
-      console.log(children);
-      children.forEach((item)=>{item.children = []});
+      children.forEach((item)=>{
+        item.children = [];
+        let innerChildren = cascaderData.filter((innerItem)=>{return innerItem.parent_id === item.id});
+        item.isLeaf = !innerChildren.length;
+      });
       callback(children)
     }, 1000)
   };
@@ -394,7 +396,6 @@
         this.cascaderResult = value;
       },
       loadCascaderData(selecetdItems, callback) {
-        // ajax();
         const selectedItem = selecetdItems[selecetdItems.length - 1];
         ajax(selectedItem, (children) => {
           selectedItem.children = children;
