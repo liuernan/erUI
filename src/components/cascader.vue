@@ -89,6 +89,7 @@
       position: absolute;
       box-shadow: $box-shadow;
       display: flex;
+      z-index: 1;
     }
   }
 </style>
