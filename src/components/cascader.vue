@@ -82,7 +82,6 @@
         document.addEventListener('click', this.clickOutside);
       },
       close() {
-        console.log('closed');
         this.contentVisiable = false;
         document.removeEventListener('click', this.clickOutside);
       }
