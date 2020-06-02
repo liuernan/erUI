@@ -397,8 +397,10 @@
       },
       loadCascaderData(selecetdItems, callback) {
         const selectedItem = selecetdItems[selecetdItems.length - 1];
+        selectedItem.loading = true;
         ajax(selectedItem, (children) => {
           selectedItem.children = children;
+          selectedItem.loading = false;
         });
         // setTimeout(() => {
         //   selectedItem.children = [

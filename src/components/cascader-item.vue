@@ -3,7 +3,14 @@
     <div class="left">
       <div class="label" v-for="item in source" @click="onClickItem(item)">
         <span>{{item.label}}</span>
-        <er-icon v-if="leafArrowVisible(item)" name="right" class="icon"></er-icon>
+        <span class="icon">
+          <template v-if="loadData && item.loading">
+            <er-icon name="loading" class="loadingIcon"></er-icon>
+          </template>
+          <template v-else>
+            <er-icon v-if="leafArrowVisible(item)" name="right" class="rightIcon"></er-icon>
+          </template>
+        </span>
       </div>
     </div>
     <div class="right" v-if="rightItem">
@@ -85,6 +92,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     height: 100%;
+
     .left {
       white-space: nowrap;
       height: 100%;
@@ -102,8 +110,18 @@
         }
 
         .icon {
+          margin-left: .5em;
           margin-right: -.5em;
-          transform: scale(0.5);
+          display: flex;
+          justify-content: center;
+
+          .loadingIcon {
+            animation: spin 2s infinite linear;
+          }
+
+          .rightIcon {
+            transform: scale(.5);
+          }
         }
       }
     }

@@ -37,15 +37,6 @@
 <style lang="scss" scoped>
   @import "var";
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
   .er-button {
     font-size: $font-size;
     height: $button-height;
