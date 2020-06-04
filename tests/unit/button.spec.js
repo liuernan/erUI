@@ -70,17 +70,17 @@ describe('Button', () => {
   })
 
   it('点击 button 触发 click 事件', () => {
-    const wrapper = mount(Button, {
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
       propsData: {
-        icon: 'settings'
+        icon: 'settings',
       }
-    })
-    const vm = wrapper.vm;
+    }).$mount()
 
     const callback = sinon.fake();
     vm.$on('click', callback)
-    vm.trigger('click')
-    expect(callback).to.have.been.called
+    vm.$el.click()
+    expect(callback).to.have.been.callCount(1)
 
   })
 })
