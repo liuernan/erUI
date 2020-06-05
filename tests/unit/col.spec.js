@@ -1,7 +1,13 @@
+import chai, {expect} from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+
+chai.use(sinonChai)
+
+import {shallowMount, mount} from '@vue/test-utils'
+
 import Vue from 'vue';
 import Col from '../../src/components/col';
-
-const expect = chai.expect;
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
@@ -11,7 +17,7 @@ describe('Col', () => {
     expect(Col).to.be.exist;
   });
 
-  describe('的 props 接收', () => {
+  describe('props 接收', () => {
     const Constructor = Vue.extend(Col);
 
     it('span', (done) => {
