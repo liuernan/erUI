@@ -235,17 +235,7 @@
       <er-button icon="left" icon-position="left">上一步</er-button>
       <er-button icon="right" icon-position="right">下一步</er-button>
     </div>
-    <div class="buxiangqimingzi">
-      <er-button-group>
-        <er-button icon="left" icon-position="left">上一步</er-button>
-        <er-button icon="right" icon-position="right">下一步</er-button>
-      </er-button-group>
-      <er-button-group>
-        <er-button icon="left" icon-position="left">上一步</er-button>
-        <er-button>更多</er-button>
-        <er-button icon="right" icon-position="right">下一步</er-button>
-      </er-button-group>
-    </div>
+
     <div class="buxiangqimingzi">
       <input type="text">
       <input :value="message" @input="message = $event.target.value"></input>

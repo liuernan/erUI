@@ -21,7 +21,8 @@
     "sass-loader": "^8.0.2",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.0"
   },
   "browserslist": [
     "> 1%",
