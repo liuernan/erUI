@@ -222,21 +222,6 @@
         <er-col :span="4">6</er-col>
       </er-row>
     </div>
-
-
-    <div class="buxiangqimingzi">
-      <input type="text">
-      <input :value="message" @input="message = $event.target.value"></input>
-      <er-input v-model="message"></er-input>
-      <p>{{ message }}</p>
-      <er-input value="我被 disabled" disabled></er-input>
-      <er-input value="我被 readonly" readonly></er-input>
-    </div>
-    <div class="buxiangqimingzi">
-      <er-input value="我被 error" error="你怎么可能有错"></er-input>
-      <er-input value="我被 tips" tips="我就是想提示你点什么"></er-input>
-      <er-input value="我被 tips" tips="我就是想提示你点什么"></er-input>
-    </div>
   </div>
 </template>
 

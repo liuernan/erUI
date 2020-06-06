@@ -1,3 +1,5 @@
 # input - 输入框
 
-这里展示组件
+<ClientOnly>
+<input-demo></input-demo>
+</ClientOnly>
