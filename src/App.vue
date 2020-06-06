@@ -116,37 +116,6 @@
       <er-button icon="settings" @click="testToastMiddle">点我从中间触发 toast</er-button>
       <er-button icon="settings" @click="testToastBottom">点我从下面触发 toast</er-button>
     </div>
-    <div>
-      <er-layout>
-        <er-sider class="sider">sider</er-sider>
-        <er-layout>
-          <er-header class="header">header</er-header>
-          <er-content class="content">content</er-content>
-          <er-footer class="footer">footer</er-footer>
-        </er-layout>
-      </er-layout>
-      <er-layout>
-        <er-header class="header">header</er-header>
-        <er-layout>
-          <er-content class="content">content</er-content>
-          <er-sider class="sider">sider</er-sider>
-        </er-layout>
-        <er-footer class="footer">footer</er-footer>
-      </er-layout>
-      <er-layout>
-        <er-header class="header">header</er-header>
-        <er-layout>
-          <er-sider class="sider">sider</er-sider>
-          <er-content class="content">content</er-content>
-        </er-layout>
-        <er-footer class="footer">footer</er-footer>
-      </er-layout>
-      <er-layout class="layout">
-        <er-header class="header">header</er-header>
-        <er-content class="content">content</er-content>
-        <er-footer class="footer">footer</er-footer>
-      </er-layout>
-    </div>
 
   </div>
 </template>
@@ -331,27 +300,4 @@
     box-sizing: border-box;
   }
 
-  .layout {
-    height: 100vh;
-    background-color: lightgreen;
-  }
-
-  .header {
-    height: 100px;
-    background-color: deepskyblue;
-  }
-
-  .sider {
-    width: 100px;
-    background-color: lightskyblue;
-  }
-
-  .content {
-    background-color: pink;
-  }
-
-  .footer {
-    height: 100px;
-    background-color: skyblue;
-  }
 </style>
