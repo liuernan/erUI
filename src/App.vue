@@ -147,96 +147,25 @@
         <er-footer class="footer">footer</er-footer>
       </er-layout>
     </div>
-    <div class="buxiangqimingzi">
-      <er-row>
-        <er-col class="reactive"
-                :span="2"
-                :ipad="{span: 8}"
-                :narrow-pc="{span: 12}"
-                :pc="{span: 16}"
-                :wide-pc="{span: 20}"
-        ></er-col>
-        <er-col class="reactive"
-                :span="22"
-                :ipad="{span: 16}"
-                :narrow-pc="{span: 12}"
-                :pc="{span: 8}"
-                :wide-pc="{span: 4}"
-        ></er-col>
-      </er-row>
-    </div>
-    <div class="buxiangqimingzi">
-      <er-row>
-        <er-col :span="6">
-          <er-row :align="`center`">
-            <er-col>1</er-col>
-            <er-col>2</er-col>
-          </er-row>
-        </er-col>
-        <er-col :span="18">
-          <er-row :align="`right`">
-            <er-col>1</er-col>
-            <er-col>2</er-col>
-            <er-col>3</er-col>
-            <er-col>4</er-col>
-            <er-col>5</er-col>
-            <er-col>6</er-col>
-            <er-col>7</er-col>
-            <er-col>8</er-col>
-          </er-row>
-        </er-col>
-      </er-row>
-    </div>
-    <div class="buxiangqimingzi">
-      <er-row :gutter="20">
-        <er-col span="2">2</er-col>
-        <er-col :span="20" :offset="2">22</er-col>
-      </er-row>
-      <er-row>
-        <er-col span="4">4</er-col>
-        <er-col :span="20">20</er-col>
-      </er-row>
-      <er-row :gutter="20">
-        <er-col :span="8">8</er-col>
-        <er-col :span="2">2</er-col>
-        <er-col :span="12" :offset="2">12</er-col>
-      </er-row>
-      <er-row :gutter="20">
-        <er-col :span="4">4</er-col>
-        <er-col :span="6" :offset="2">6</er-col>
-        <er-col :span="10" :offset="2">10</er-col>
-      </er-row>
-      <er-row :gutter="20">
-        <er-col :span="4">4</er-col>
-        <er-col :span="4" :offset="1">4</er-col>
-        <er-col :span="4" :offset="1">4</er-col>
-        <er-col :span="4" :offset="1">4</er-col>
-        <er-col :span="4" :offset="1">4</er-col>
-      </er-row>
-      <er-row :gutter="20">
-        <er-col :span="4">1</er-col>
-        <er-col :span="4">2</er-col>
-        <er-col :span="4">3</er-col>
-        <er-col :span="4">4</er-col>
-        <er-col :span="4">5</er-col>
-        <er-col :span="4">6</er-col>
-      </er-row>
-    </div>
+
   </div>
 </template>
 
 <script>
   // cascader test data  --start
   import cascaderData from './assets/chinese-regions';
+
   const ajax = ({id = 0}, callback) => {
     setTimeout(() => {
       let children = [];
       children = cascaderData.filter((item) => {
         return item.parent_id === id
       });
-      children.forEach((item)=>{
+      children.forEach((item) => {
         item.children = [];
-        let innerChildren = cascaderData.filter((innerItem)=>{return innerItem.parent_id === item.id});
+        let innerChildren = cascaderData.filter((innerItem) => {
+          return innerItem.parent_id === item.id
+        });
         item.isLeaf = !innerChildren.length;
       });
       callback(children)
@@ -249,9 +178,6 @@
     components: {},
     data() {
       return {
-        loading1: true,
-        loading2: false,
-        message: '支持双向绑定',
         selectedTab: 'live',
         selectedCollapses: ['标题2'],
         source: [{
@@ -403,12 +329,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  .reactive {
-    height: 100px;
-    background-color: pink;
-    border: 1px dotted grey;
   }
 
   .layout {
