@@ -1,3 +1,5 @@
 # tabs - 标签页
 
-这里展示组件
+<ClientOnly>
+<tabs-demo></tabs-demo>
+</ClientOnly>

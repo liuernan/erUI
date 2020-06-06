@@ -94,23 +94,6 @@
         <er-button>hover 我出现 popover</er-button>
       </er-popover>
     </div>
-    <div class="buxiangqimingzi">
-      <er-tabs :selected.sync="selectedTab" direction="horizontal">
-        <er-tabs-nav>
-          <template slot="er-nav-button">
-            <er-button icon="settings">操作按钮</er-button>
-          </template>
-          <er-tabs-item class="item-test" name="women">美女</er-tabs-item>
-          <er-tabs-item class="item-test" name="live">直播</er-tabs-item>
-          <er-tabs-item class="item-test" name="videos" disabled>小电影</er-tabs-item>
-        </er-tabs-nav>
-        <er-tabs-content>
-          <er-tabs-panel class="panel-test" name="women">美女的区域美女的区域美女的区域美女的区域美女的区域美女的区域</er-tabs-panel>
-          <er-tabs-panel class="panel-test" name="live">直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域直播的区域</er-tabs-panel>
-          <er-tabs-panel class="panel-test" name="videos">全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影全是小电影</er-tabs-panel>
-        </er-tabs-content>
-      </er-tabs>
-    </div>
     <div>
       <er-button icon="settings" @click="testToastTop">点我从上面触发 toast</er-button>
       <er-button icon="settings" @click="testToastMiddle">点我从中间触发 toast</er-button>
@@ -147,7 +130,6 @@
     components: {},
     data() {
       return {
-        selectedTab: 'live',
         selectedCollapses: ['标题2'],
         source: [{
           value: 'zhejiang',
