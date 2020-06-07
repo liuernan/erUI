@@ -95,9 +95,6 @@
       </er-popover>
     </div>
     <div>
-      <er-button icon="settings" @click="testToastTop">点我从上面触发 toast</er-button>
-      <er-button icon="settings" @click="testToastMiddle">点我从中间触发 toast</er-button>
-      <er-button icon="settings" @click="testToastBottom">点我从下面触发 toast</er-button>
     </div>
 
   </div>
@@ -206,27 +203,6 @@
       }
     },
     methods: {
-      testToastTop() {
-        this.testToast('top');
-      },
-      testToastMiddle() {
-        this.testToast('middle');
-      },
-      testToastBottom() {
-        this.testToast('bottom');
-      },
-      testToast(position) {
-        this.$toast('我是一个 toast', {
-          autoClose: 50,
-          position: position,
-          closeButton: {
-            text: '关闭',
-            callback: () => {
-              console.log('用户的 callback 触发了');
-            }
-          }
-        })
-      },
       selecteCollapse(arr, vm) {
         // console.log(arr);
         // console.log(vm);

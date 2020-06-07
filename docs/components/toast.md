@@ -1,3 +1,5 @@
 # toast - 弹出框
 
-这里展示组件
+<ClientOnly>
+<toast-demo></toast-demo>
+</ClientOnly>

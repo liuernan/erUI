@@ -1,5 +1,5 @@
 <template>
-  <div class="warpper" :class="classList">
+  <div class="wrapper-toast" :class="classList">
     <div class="toast" ref="toast">
       <slot></slot>
       <div v-if="closeButton" class="close" @click="clickClose">
@@ -98,7 +98,7 @@
     }
   }
 
-  .warpper {
+  .wrapper-toast {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
