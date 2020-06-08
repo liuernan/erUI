@@ -1,3 +1,5 @@
 # popover - 弹出框
 
-这里展示组件
+<ClientOnly>
+<popover-demo></popover-demo>
+</ClientOnly>

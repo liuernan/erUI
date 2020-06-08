@@ -33,69 +33,6 @@
         </er-collapse-item>
       </er-collapse>
     </div>
-    <div style="padding: 300px;border: 1px solid red; overflow: hidden">
-      <er-popover>
-        <template slot="popover-content" slot-scope="{close}">
-          <div>我是 popover 的内容</div>
-          <er-button icon="settings" @click="close">关闭</er-button>
-        </template>
-        <er-button>点我上面出现 popover</er-button>
-      </er-popover>
-      <er-popover position="bottom">
-        <template slot="popover-content">
-          <div>我是 popover 的内容</div>
-        </template>
-        <er-button>点我出现 popover</er-button>
-      </er-popover>
-      <er-popover position="left">
-        <template slot="popover-content">
-          <div>
-            左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的左边出现的内容左边出现的
-          </div>
-        </template>
-        <er-button>点我出现 popover</er-button>
-      </er-popover>
-      <er-popover position="right">
-        <template slot="popover-content">
-          <div>我是 popover 的内容</div>
-        </template>
-        <er-button>点我出现 popover</er-button>
-      </er-popover>
-    </div>
-    <div style="border: 1px solid red; overflow: hidden;width: 800px;height: 800px">
-      <er-popover trigger="hover">
-        <template slot="popover-content">
-          <div>我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是
-            popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容
-          </div>
-        </template>
-        <er-button>hover 我出现 popover</er-button>
-      </er-popover>
-      <er-popover trigger="hover" position="bottom">
-        <template slot="popover-content">
-          <div>
-            popoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopoverpopover
-          </div>
-        </template>
-        <er-button>hover 我出现 popover</er-button>
-      </er-popover>
-      <er-popover trigger="hover" position="left">
-        <template slot="popover-content">
-          <div>我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是 popover 的内容我是
-            popover 的内容我是 popover 的内容
-          </div>
-        </template>
-        <er-button>hover 我出现 popover</er-button>
-      </er-popover>
-      <er-popover trigger="hover" position="right">
-        <template slot="popover-content">
-          <div>我是 popover 的内容</div>
-        </template>
-        <er-button>hover 我出现 popover</er-button>
-      </er-popover>
-    </div>
-    <div>
-    </div>
 
   </div>
 </template>
