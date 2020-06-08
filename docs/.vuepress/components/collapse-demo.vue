@@ -58,13 +58,6 @@
     }
   }
 </script>
-
-<style>
-  .wrapper-toast {
-    z-index: 30 !important;
-  }
-</style>
-
 <style scoped>
   * {
     box-sizing: border-box;
