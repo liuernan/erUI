@@ -14,26 +14,6 @@
       <p>上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文上下文</p>
     </div>
 
-    <div style="padding: 20px">
-      <er-collapse :selected.sync="selectedCollapses" @update:selected="selecteCollapse" multiple>
-        <er-collapse-item title="标题1">内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</er-collapse-item>
-        <er-collapse-item title="标题2">内容2内容2内容2</er-collapse-item>
-        <er-collapse-item title="标题3">
-          内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3
-        </er-collapse-item>
-      </er-collapse>
-    </div>
-    选中的内容是：{{selectedCollapses}}
-    <div style="padding: 20px">
-      <er-collapse :selected.sync="selectedCollapses">
-        <er-collapse-item title="标题1">内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1内容1</er-collapse-item>
-        <er-collapse-item title="标题2">内容2内容2内容2</er-collapse-item>
-        <er-collapse-item title="标题3">
-          内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3
-        </er-collapse-item>
-      </er-collapse>
-    </div>
-
   </div>
 </template>
 
@@ -64,7 +44,6 @@
     components: {},
     data() {
       return {
-        selectedCollapses: ['标题2'],
         source: [{
           value: 'zhejiang',
           label: '浙江',
@@ -140,11 +119,6 @@
       }
     },
     methods: {
-      selecteCollapse(arr, vm) {
-        // console.log(arr);
-        // console.log(vm);
-        // console.log('chufale');
-      },
       onChange(value) {
         this.cascaderResult = value;
       },
