@@ -72,7 +72,11 @@
         newSelected[this.level] = item;
         newSelected.splice(this.level + 1);
         this.$emit('update:selected', newSelected);
-        item.isLeaf && this.close();
+
+        if (this.loadData && item.isLeaf || !this.loadData && (!item.children || item.children && !item.children.length)) {
+          this.close();
+        }
+
       },
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
