@@ -42,8 +42,11 @@ describe('Button', () => {
     vm.$destroy()
   })
 
-  xit('icon 默认的 order 是 1', () => {
+  it('icon 默认的 order 是 1', () => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
     const wrapper = mount(Button, {
+      attachTo: div,
       propsData: {
         icon: 'settings'
       }
@@ -52,10 +55,14 @@ describe('Button', () => {
 
     const icon = vm.$el.querySelector('svg')
     expect(getComputedStyle(icon).order).to.eq('1')
+    div.remove()
   })
 
-  xit('设置 iconPosition 可以改变 order', () => {
+  it('设置 iconPosition 可以改变 order', () => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
     const wrapper = mount(Button, {
+      attachTo: div,
       propsData: {
         icon: 'settings',
         iconPosition: 'right'
