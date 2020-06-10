@@ -1,11 +1,17 @@
-import Vue from 'vue';
+import chai, {expect} from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+
+chai.use(sinonChai)
+
+import {shallowMount, mount} from '@vue/test-utils'
+
+import Vue from 'vue/dist/vue';
 import Collapse from '../../src/components/collapse';
 import CollapseItem from '../../src/components/collapse-item'
 
 Vue.component('er-collapse', Collapse);
 Vue.component('er-collapse-item', CollapseItem);
-
-const expect = chai.expect;
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
