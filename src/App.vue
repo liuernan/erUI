@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <er-carousel>
-      <er-carousel-item v-for="item in 4" :key="item">
-        <div>{{item}}</div>
-      </er-carousel-item>
-    </er-carousel>
+    <div class="app-wrapper">
+      <er-carousel>
+        <er-carousel-item v-for="item in 4" :key="item" :name="item.toString()">
+          <div class="carousel-demo">{{item}}</div>
+        </er-carousel-item>
+      </er-carousel>
+    </div>
   </div>
 </template>
 
 <script>
   import Carousel from './components/carousel'
   import Carouseltem from './components/carousel-item'
+
   export default {
     name: 'App',
     components: {
@@ -18,7 +21,9 @@
       'er-carousel-item': Carouseltem
     },
     data() {
-      return {}
+      return {
+        selectedCarousel: undefined
+      }
     },
     methods: {}
   }
@@ -37,6 +42,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  .app-wrapper {
+    border: 1px solid black;
+    margin: 100px;
+    display: inline-block;
+  }
+
+  .carousel-demo {
+    width: 400px;
+    height: 200px;
+    border: 1px dotted grey;
+    background-color: lightpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 </style>
