@@ -21,9 +21,7 @@
       'er-carousel-item': Carouseltem
     },
     data() {
-      return {
-        selectedCarousel: undefined
-      }
+      return {}
     },
     methods: {}
   }
@@ -58,6 +56,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 5em;
   }
 
 </style>

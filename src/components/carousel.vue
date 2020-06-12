@@ -8,11 +8,6 @@
 <script>
   export default {
     name: 'ErCarousel',
-    props: {
-      selected: {
-        type: String
-      }
-    },
     mounted() {
       if (!this.$children.length) {
         console.error('erUI error：你应该给 er-carousel 传几个 er-carousel-item 作为子组件，空的算怎么回事？');
