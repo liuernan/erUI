@@ -22,7 +22,8 @@
     data() {
       return {
         carouselItemsLength: undefined,
-        selectedIndex: 0
+        selectedIndex: 0,
+        timerId: undefined
       }
     },
     computed: {
@@ -53,7 +54,7 @@
           } else {
             vm.reverseSlide = index < this.currentItemIndex;
           }
-          this.$nextTick(()=>{
+          this.$nextTick(() => {
             vm.selected = this.$children[index].name;
           })
         });
@@ -62,7 +63,7 @@
         const run = () => {
           this.updateItems(this.selectedIndex);
           this.selectedIndex === this.$children.length - 1 ? this.selectedIndex = 0 : this.selectedIndex++;
-          setTimeout(run, 5000)
+          this.timerId = setTimeout(run, 5000)
         };
         run()
       },
@@ -70,7 +71,14 @@
         if (n === this.currentItemIndex + 1) {
           return
         } else {
-          this.updateItems(n - 1);
+          if (this.autoPlay) {
+            this.selectedIndex = n - 1;
+            window.clearTimeout(this.timerId);
+            this.timerId = undefined;
+            this.playAutomatically();
+          } else {
+            this.updateItems(n - 1);
+          }
         }
       }
     }
