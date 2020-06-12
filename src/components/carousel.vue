@@ -36,6 +36,7 @@
 
   .carousel-items-wrapper {
     display: flex;
+    overflow: hidden;
     position: relative;
   }
 
