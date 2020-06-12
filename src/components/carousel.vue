@@ -4,7 +4,8 @@
       <slot></slot>
     </div>
     <div class="er-carousel-dots-wrapper">
-      <span v-for="n in carouselItemsLength" :class="{'er-carousel-dot-active': currentItemIndex + 1 === n}">
+      <span v-for="n in carouselItemsLength" :class="{'er-carousel-dot-active': currentItemIndex + 1 === n}"
+            @click="clickDot(n)">
       </span>
     </div>
   </div>
@@ -47,7 +48,14 @@
     methods: {
       updateItems(index) {
         this.$children.forEach((vm) => {
-          vm.selected = this.$children[index].name;
+          if (index === 0 && this.currentItemIndex === this.$children.length - 1) {
+            vm.reverseSlide = false;
+          } else {
+            vm.reverseSlide = index < this.currentItemIndex;
+          }
+          this.$nextTick(()=>{
+            vm.selected = this.$children[index].name;
+          })
         });
       },
       playAutomatically() {
@@ -57,6 +65,13 @@
           setTimeout(run, 5000)
         };
         run()
+      },
+      clickDot(n) {
+        if (n === this.currentItemIndex + 1) {
+          return
+        } else {
+          this.updateItems(n - 1);
+        }
       }
     }
   }
