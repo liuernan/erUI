@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <div class="carousel-item" v-if="visible">
+    <div class="carousel-item" v-if="visible" :class="{reverseSlide}">
       <slot></slot>
     </div>
   </transition>
@@ -15,7 +15,8 @@
     },
     data() {
       return {
-        selected: undefined
+        selected: undefined,
+        reverseSlide: false
       }
     },
     computed: {
@@ -27,9 +28,6 @@
   }
 </script>
 <style lang="scss" scoped>
-  .carousel-item {
-  }
-
   .slide-enter-active,
   .slide-leave-active {
     transition: all 1s;
@@ -48,4 +46,15 @@
     /*opacity: 0;*/
     transform: translateX(-100%);
   }
+
+  .slide-enter.reverseSlide {
+    /*opacity: 0;*/
+    transform: translateX(-100%);
+  }
+
+  .slide-leave-to.reverseSlide {
+    /*opacity: 0;*/
+    transform: translateX(100%);
+  }
+
 </style>
