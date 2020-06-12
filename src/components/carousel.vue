@@ -90,8 +90,16 @@
         margin: 0 4px;
         background-color: $white;
 
+        &:hover {
+          cursor: pointer;
+        }
+
         &.er-carousel-dot-active {
           background-color: $border-color;
+
+          &:hover {
+            cursor: default;
+          }
         }
       }
     }
