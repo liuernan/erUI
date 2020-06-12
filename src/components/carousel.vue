@@ -1,7 +1,11 @@
 <template>
   <div class="er-carousel">
-    <div class="carousel-items-wrapper">
+    <div class="er-carousel-items-wrapper">
       <slot></slot>
+    </div>
+    <div class="er-carousel-dots-wrapper">
+      <span v-for="n in carouselItemsLength" :class="{'er-carousel-dot-active': currentItemIndex + 1 === n}">
+      </span>
     </div>
   </div>
 </template>
@@ -17,7 +21,14 @@
     data() {
       return {
         carouselItemsLength: undefined,
-        currentSelectedIndex: undefined
+        selectedIndex: 0
+      }
+    },
+    computed: {
+      currentItemIndex() {
+        return this.$children.indexOf(this.$children.find((vm) => {
+          return vm.selected === vm.name
+        }))
       }
     },
     mounted() {
@@ -26,18 +37,23 @@
       } else {
         this.carouselItemsLength = this.$children.length;
 
-        this.$children[0].selected = this.$children[0].name;
-        this.currentSelectedIndex = 0;
-        this.autoPlay && this.playAutomatically();
+        if (this.autoPlay) {
+          this.playAutomatically();
+        } else {
+          this.updateItems(this.selectedIndex)
+        }
       }
     },
     methods: {
+      updateItems(index) {
+        this.$children.forEach((vm) => {
+          vm.selected = this.$children[index].name;
+        });
+      },
       playAutomatically() {
         const run = () => {
-          this.$children.forEach((vm) => {
-            vm.selected = this.$children[this.currentSelectedIndex].name;
-          });
-          this.currentSelectedIndex === this.$children.length - 1 ? this.currentSelectedIndex = 0 : this.currentSelectedIndex++;
+          this.updateItems(this.selectedIndex);
+          this.selectedIndex === this.$children.length - 1 ? this.selectedIndex = 0 : this.selectedIndex++;
           setTimeout(run, 5000)
         };
         run()
@@ -46,13 +62,39 @@
   }
 </script>
 <style lang="scss" scoped>
+  @import "var";
+
   .er-carousel {
-  }
-
-  .carousel-items-wrapper {
-    display: flex;
-    overflow: hidden;
     position: relative;
-  }
+    display: flex;
+    justify-content: center;
 
+    & > .er-carousel-items-wrapper {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    & > .er-carousel-dots-wrapper {
+      position: absolute;
+      bottom: 8px;
+      display: inline-flex;
+
+      & > span {
+        display: flex;
+        width: 16px;
+        height: 4px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        margin: 0 4px;
+        background-color: $white;
+
+        &.er-carousel-dot-active {
+          background-color: $border-color;
+        }
+      }
+    }
+
+  }
 </style>
