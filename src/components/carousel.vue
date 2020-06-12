@@ -8,19 +8,39 @@
 <script>
   export default {
     name: 'ErCarousel',
+    props: {
+      autoPlay: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data() {
+      return {
+        carouselItemsLength: undefined,
+        currentSelectedIndex: undefined
+      }
+    },
     mounted() {
       if (!this.$children.length) {
         console.error('erUI error：你应该给 er-carousel 传几个 er-carousel-item 作为子组件，空的算怎么回事？');
       } else {
-        this.$children[0].selected = this.$children[0].name;
+        this.carouselItemsLength = this.$children.length;
 
-        let i = 1;
-        setInterval(() => {
+        this.$children[0].selected = this.$children[0].name;
+        this.currentSelectedIndex = 0;
+        this.autoPlay && this.playAutomatically();
+      }
+    },
+    methods: {
+      playAutomatically() {
+        const run = () => {
           this.$children.forEach((vm) => {
-            vm.selected = i.toString();
+            vm.selected = this.$children[this.currentSelectedIndex].name;
           });
-          i === this.$children.length ? i = 1 : i++;
-        }, 3000)
+          this.currentSelectedIndex === this.$children.length - 1 ? this.currentSelectedIndex = 0 : this.currentSelectedIndex++;
+          setTimeout(run, 5000)
+        };
+        run()
       }
     }
   }

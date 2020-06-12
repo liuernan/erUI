@@ -32,7 +32,7 @@
 
   .slide-enter-active,
   .slide-leave-active {
-    transition: all 3s;
+    transition: all 1s;
   }
 
   .slide-leave-active {
@@ -40,12 +40,12 @@
   }
 
   .slide-enter {
-    opacity: 0;
+    /*opacity: 0;*/
     transform: translateX(100%);
   }
 
   .slide-leave-to {
-    opacity: 0;
+    /*opacity: 0;*/
     transform: translateX(-100%);
   }
 </style>
