@@ -91,11 +91,15 @@
     position: relative;
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 
     & > .er-carousel-items-wrapper {
       display: flex;
       overflow: hidden;
       position: relative;
+      width: 100%;
+      height: 100%;
     }
 
     & > .er-carousel-dots-wrapper {

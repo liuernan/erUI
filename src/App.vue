@@ -53,11 +53,11 @@
     border: 1px solid black;
     margin: 100px;
     display: inline-block;
+    width: 50%;
+    height: 25%;
   }
 
   .carousel-demo {
-    width: 400px;
-    height: 200px;
     border: 1px dotted grey;
     background-color: lightpink;
     display: flex;

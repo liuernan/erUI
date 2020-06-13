@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <div class="carousel-item" v-if="visible" :class="{reverseSlide}">
+    <div class="er-carousel-item" v-if="visible" :class="{reverseSlide}">
       <slot></slot>
     </div>
   </transition>
@@ -28,6 +28,11 @@
   }
 </script>
 <style lang="scss" scoped>
+  .er-carousel-item {
+    width: 100%;
+    height: 100%;
+  }
+
   .slide-enter-active,
   .slide-leave-active {
     transition: all 1s;
