@@ -1,18 +1,8 @@
 <template>
   <div id="app">
     <div class="app-wrapper">
-      <er-carousel :auto-play="false">
-        <er-carousel-item v-for="item in 4" :key="item" :name="item.toString()">
-          <div class="carousel-demo">{{item}}</div>
-        </er-carousel-item>
-      </er-carousel>
     </div>
     <div class="app-wrapper">
-      <er-carousel>
-        <er-carousel-item v-for="item in 4" :key="item" :name="item.toString()">
-          <div class="carousel-demo">{{item}}</div>
-        </er-carousel-item>
-      </er-carousel>
     </div>
   </div>
 </template>
