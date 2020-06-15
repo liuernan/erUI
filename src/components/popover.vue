@@ -42,7 +42,7 @@
         this.$el.addEventListener('mouseleave', this.close);
       }
     },
-    destroyed() {
+    beforeDestroy() {
       if ('click' === this.trigger) {
         this.$el.removeEventListener('click', this.clickHandler);
       } else {
