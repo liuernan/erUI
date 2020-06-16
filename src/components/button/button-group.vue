@@ -16,7 +16,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "src/components/var";
+  @import "../../styles/var";
 
   .er-button-group {
     display: inline-flex;

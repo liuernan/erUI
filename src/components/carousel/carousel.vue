@@ -85,7 +85,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "src/components/var";
+  @import "../../styles/var";
 
   .er-carousel {
     position: relative;

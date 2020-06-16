@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "src/components/var";
+  @import "../../styles/var";
   .er-collapse-item-wrapper {
     margin: -1px;
 

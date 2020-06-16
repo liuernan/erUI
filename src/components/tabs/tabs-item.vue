@@ -47,7 +47,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "src/components/var";
+  @import "../../styles/var";
 
   .tabs-item {
     padding: 0 1em;

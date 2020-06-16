@@ -35,7 +35,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  @import "src/components/var";
+  @import "../../styles/var";
 
   .er-button {
     font-size: $font-size;

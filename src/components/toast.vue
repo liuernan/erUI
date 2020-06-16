@@ -65,7 +65,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/styles/var";
 
   @keyframes slide-down {
     0% {

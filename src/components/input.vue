@@ -51,7 +51,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/styles/var";
 
   .warpper {
     display: inline-flex;
