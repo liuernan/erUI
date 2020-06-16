@@ -28,7 +28,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/components/var";
 
   .tabs-panel {
     height: $tabs-panel-height;

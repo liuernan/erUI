@@ -7,7 +7,7 @@ chai.use(sinonChai)
 import {shallowMount, mount} from '@vue/test-utils'
 
 import Vue from 'vue';
-import TabsNav from '../../src/components/tabs-nav';
+import TabsNav from '../../src/components/tabs/tabs-nav';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
