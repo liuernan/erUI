@@ -2,21 +2,14 @@
   <div id="app">
     <div class="app-wrapper">
     </div>
-    <div class="app-wrapper">
-    </div>
   </div>
 </template>
 
 <script>
-  import Carousel from './components/carousel'
-  import Carouseltem from './components/carousel-item'
 
   export default {
     name: 'App',
-    components: {
-      'er-carousel': Carousel,
-      'er-carousel-item': Carouseltem
-    },
+    components: {},
     data() {
       return {}
     },
@@ -45,15 +38,6 @@
     display: inline-block;
     width: 50%;
     height: 25%;
-  }
-
-  .carousel-demo {
-    border: 1px dotted grey;
-    background-color: lightpink;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5em;
   }
 
 </style>

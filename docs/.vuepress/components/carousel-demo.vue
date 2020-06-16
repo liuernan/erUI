@@ -20,8 +20,8 @@
   </div>
 </template>
 <script>
-  import Carousel from '../../../src/components/carousel';
-  import CarouselItem from '../../../src/components/carousel-item';
+  import Carousel from '../../../src/components/carousel/carousel';
+  import CarouselItem from '../../../src/components/carousel/carousel-item';
 
   export default {
     components: {
