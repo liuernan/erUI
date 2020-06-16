@@ -22,8 +22,8 @@ import TabsItem from './components/tabs-item';
 import TabsContent from './components/tabs-content';
 import TabsPanel from './components/tabs-panel';
 import Popover from './components/popover';
-import Collapse from './components/collapse';
-import CollapseItem from './components/collapse-item';
+import Collapse from './components/collapse/collapse';
+import CollapseItem from './components/collapse/collapse-item';
 import Cascader from './components/cascader/cascader';
 
 Vue.component('er-button', Button);

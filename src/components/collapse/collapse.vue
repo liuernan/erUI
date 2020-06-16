@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/components/var";
 
   .er-collapse {
     border: 1px solid $border-color;
