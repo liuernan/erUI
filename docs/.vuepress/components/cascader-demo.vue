@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import Cascader from '../../../src/components/cascader';
+  import Cascader from '../../../src/components/cascader/cascader';
 
   // cascader test data  --start
   import cascaderData from '../../../src/assets/chinese-regions';

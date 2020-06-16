@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import Icon from './icon'
+  import Icon from '../icon'
 
   export default {
     name: "ErCascaderItem",
@@ -89,7 +89,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/components/var";
 
   .er-cascader-item {
     display: flex;

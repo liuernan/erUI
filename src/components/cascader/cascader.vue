@@ -89,7 +89,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/components/var";
 
   .er-cascader {
     position: relative;
