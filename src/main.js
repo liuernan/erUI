@@ -5,7 +5,7 @@ Vue.config.productionTip = false
 
 import Button from './components/button/button.vue';
 import ButtonGroup from './components/button/button-group';
-import Icon from './components/icon.vue';
+import Icon from './components/icon/icon.vue';
 import Input from './components/input';
 import Row from './components/grid/row';
 import Col from './components/grid/col';
