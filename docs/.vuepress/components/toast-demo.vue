@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-  import Button from '../../../src/components/button';
+  import Button from '../../../src/components/button/button';
   import Plugin from '../../../src/components/plugin';
   import Vue from 'vue';
 

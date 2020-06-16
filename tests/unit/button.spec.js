@@ -6,7 +6,7 @@ chai.use(sinonChai)
 
 import {shallowMount, mount} from '@vue/test-utils'
 import Vue from 'vue'
-import Button from '@/components/button.vue'
+import Button from '../../src/components/button/button'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false

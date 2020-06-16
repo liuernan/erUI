@@ -9,7 +9,7 @@
   </button>
 </template>
 <script>
-  import Icon from "./icon";
+  import Icon from "../icon";
 
   export default {
     name: 'er-button',
@@ -35,7 +35,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  @import "src/components/var";
 
   .er-button {
     font-size: $font-size;

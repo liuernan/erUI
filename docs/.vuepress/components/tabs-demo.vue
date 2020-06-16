@@ -27,7 +27,7 @@
   import TabsContent from '../../../src/components/tabs-content';
   import TabsItem from '../../../src/components/tabs-item';
   import TabsPanel from '../../../src/components/tabs-panel';
-  import Button from '../../../src/components/button';
+  import Button from '../../../src/components/button/button';
 
   export default {
     components: {

@@ -25,8 +25,8 @@
   </div>
 </template>
 <script>
-  import Button from '../../../src/components/button';
-  import ButtonGroup from '../../../src/components/button-group';
+  import Button from '../../../src/components/button/button';
+  import ButtonGroup from '../../../src/components/button/button-group';
 
   export default {
     components: {

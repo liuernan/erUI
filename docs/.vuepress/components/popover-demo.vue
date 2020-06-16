@@ -85,7 +85,7 @@
 </template>
 <script>
   import Popover from '../../../src/components/popover';
-  import Button from '../../../src/components/button';
+  import Button from '../../../src/components/button/button';
 
   export default {
     components: {
