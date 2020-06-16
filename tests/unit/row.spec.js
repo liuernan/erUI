@@ -7,8 +7,8 @@ chai.use(sinonChai)
 import {shallowMount, mount} from '@vue/test-utils'
 
 import Vue from 'vue/dist/vue';
-import Row from '../../src/components/row';
-import Col from '../../src/components/col';
+import Row from '../../src/components/grid/row';
+import Col from '../../src/components/grid/col';
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;

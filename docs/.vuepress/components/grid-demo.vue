@@ -95,8 +95,8 @@
   </div>
 </template>
 <script>
-  import Row from '../../../src/components/row';
-  import Col from '../../../src/components/col';
+  import Row from '../../../src/components/grid/row';
+  import Col from '../../../src/components/grid/col';
 
   export default {
     components: {
