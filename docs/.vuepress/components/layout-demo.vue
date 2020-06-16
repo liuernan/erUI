@@ -47,11 +47,11 @@
   </div>
 </template>
 <script>
-  import Layout from '../../../src/components/layout';
-  import Header from '../../../src/components/header';
-  import Content from '../../../src/components/content';
-  import Footer from '../../../src/components/footer';
-  import Sider from '../../../src/components/sider';
+  import Layout from '../../../src/components/layout/layout';
+  import Header from '../../../src/components/layout/header';
+  import Content from '../../../src/components/layout/content';
+  import Footer from '../../../src/components/layout/footer';
+  import Sider from '../../../src/components/layout/sider';
 
   export default {
     components: {
