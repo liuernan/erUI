@@ -19,7 +19,7 @@
   import Cascader from '../../../src/components/cascader/cascader';
 
   // cascader test data  --start
-  import cascaderData from '../../../src/assets/chinese-regions';
+  import cascaderData from '../../../src/assets/fixtures/chinese-regions';
 
   const ajax = ({id = 0}, callback) => {
     setTimeout(() => {
