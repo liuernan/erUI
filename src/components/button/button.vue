@@ -12,7 +12,7 @@
   import Icon from "../icon/icon";
 
   export default {
-    name: 'er-button',
+    name: 'ErButton',
     components: {
       "er-icon": Icon
     },
