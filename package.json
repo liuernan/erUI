@@ -4,6 +4,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name erui src/index.js",
     "test": "karma start --single-run",
     "test:dev": "karma start",
     "test:unit": "vue-cli-service test:unit",
