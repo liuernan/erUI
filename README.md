@@ -4,7 +4,7 @@
 
 ## 介绍
 
-  这是一个基于 Vue 的 UI 框架，我拿来练手的，现在刚起步还非常非常的挫。^_^
+  a web UI library based on Vue 2.
 
 ## 使用指南
 
