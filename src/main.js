@@ -3,6 +3,7 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
+import Plugin from './components/plugin'
 Vue.use(Plugin);
 
 new Vue({
