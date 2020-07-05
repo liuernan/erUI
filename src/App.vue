@@ -1,15 +1,24 @@
 <template>
   <div id="app">
     <div class="app-wrapper">
+      <er-nav>
+        <er-nav-item>首页</er-nav-item>
+        <er-nav-item>产品介绍</er-nav-item>
+        <er-nav-item>关于我们</er-nav-item>
+        <er-nav-item>联系我们</er-nav-item>
+      </er-nav>
     </div>
   </div>
 </template>
 
 <script>
+  import ErNav from './components/nav/nav'
+  import ErNavItem from './components/nav/nav-item'
+  import ErSubNav from './components/nav/sub-nav'
 
   export default {
     name: 'App',
-    components: {},
+    components: {ErNav, ErNavItem, ErSubNav},
     data() {
       return {}
     },
@@ -31,13 +40,4 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  .app-wrapper {
-    border: 1px solid black;
-    margin: 100px;
-    display: inline-block;
-    width: 50%;
-    height: 25%;
-  }
-
 </style>
