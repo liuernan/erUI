@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="er-nav">
     <slot></slot>
   </div>
 </template>
@@ -9,5 +9,8 @@
   }
 </script>
 <style lang="scss" scoped>
-
+  .er-nav {
+    display: flex;
+    border: 1px solid red;
+  }
 </style>
