@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="app-wrapper">
-      <er-nav>
-        <er-nav-item>首页</er-nav-item>
-        <er-nav-item>产品介绍</er-nav-item>
-        <er-nav-item>关于我们</er-nav-item>
-        <er-nav-item>联系我们</er-nav-item>
+      <er-nav :selected="selected">
+        <er-nav-item name="home">首页</er-nav-item>
+        <er-nav-item name="introduce">产品介绍</er-nav-item>
+        <er-nav-item name="about">关于我们</er-nav-item>
+        <er-nav-item name="contact">联系我们</er-nav-item>
       </er-nav>
     </div>
   </div>
@@ -20,7 +20,9 @@
     name: 'App',
     components: {ErNav, ErNavItem, ErSubNav},
     data() {
-      return {}
+      return {
+        selected: []
+      }
     },
     methods: {}
   }

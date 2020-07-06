@@ -5,7 +5,12 @@
 </template>
 <script>
   export default  {
-    name: 'ErNav'
+    name: 'ErNav',
+    props: {
+      selected: {
+        type: Array
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>

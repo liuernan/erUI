@@ -5,7 +5,18 @@
 </template>
 <script>
   export default {
-    name: 'ErNavItem'
+    name: 'ErNavItem',
+    props: {
+      name: {
+        type: String,
+        required: true
+      }
+    },
+    data() {
+      return {
+        selected: false
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>
