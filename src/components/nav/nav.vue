@@ -12,7 +12,8 @@
         default: []
       },
       multiple: {
-        type: Boolean
+        type: Boolean,
+        default: false
       }
     },
     mounted() {
