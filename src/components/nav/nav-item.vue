@@ -1,5 +1,5 @@
 <template>
-  <div class="er-nav-item">
+  <div class="er-nav-item" :class="{selected}">
     <slot></slot>
   </div>
 </template>
@@ -23,5 +23,9 @@
   .er-nav-item {
     border: 1px solid black;
     padding: .5em;
+
+    &.selected {
+      background-color: red;
+    }
   }
 </style>

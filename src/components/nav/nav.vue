@@ -4,15 +4,27 @@
   </div>
 </template>
 <script>
-  export default  {
+  export default {
     name: 'ErNav',
     props: {
       selected: {
-        type: Array
+        type: Array,
+        default: []
       },
       multiple: {
         type: Boolean
       }
+    },
+    mounted() {
+      this.$children.forEach(vm => {
+        if (vm.$options.name === 'ErNavItem') {
+          if (this.selected.indexOf(vm.name) !== -1) {
+            vm.selected = true;
+          } else {
+            vm.selected = false;
+          }
+        }
+      })
     }
   }
 </script>

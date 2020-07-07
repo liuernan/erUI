@@ -21,7 +21,7 @@
     components: {ErNav, ErNavItem, ErSubNav},
     data() {
       return {
-        selected: []
+        selected: ['introduce']
       }
     },
     methods: {}
