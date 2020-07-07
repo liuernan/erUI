@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <div class="app-wrapper">
-      <er-nav :selected="selected">
+      <er-nav :selected.sync="selected">
+        <er-nav-item name="home">首页</er-nav-item>
+        <er-nav-item name="introduce">产品介绍</er-nav-item>
+        <er-nav-item name="about">关于我们</er-nav-item>
+        <er-nav-item name="contact">联系我们</er-nav-item>
+      </er-nav>
+    </div>
+    <div class="app-wrapper">
+      <er-nav :selected.sync="selected2" multiple>
         <er-nav-item name="home">首页</er-nav-item>
         <er-nav-item name="introduce">产品介绍</er-nav-item>
         <er-nav-item name="about">关于我们</er-nav-item>
@@ -21,7 +29,8 @@
     components: {ErNav, ErNavItem, ErSubNav},
     data() {
       return {
-        selected: ['introduce']
+        selected: ['introduce'],
+        selected2: ['introduce'],
       }
     },
     methods: {}

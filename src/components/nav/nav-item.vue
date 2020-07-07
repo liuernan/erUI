@@ -1,5 +1,5 @@
 <template>
-  <div class="er-nav-item" :class="{selected}">
+  <div class="er-nav-item" :class="{selected}" @click="clickNavItem">
     <slot></slot>
   </div>
 </template>
@@ -15,6 +15,11 @@
     data() {
       return {
         selected: false
+      }
+    },
+    methods: {
+      clickNavItem(){
+        this.$emit('add:selected', this.name);
       }
     }
   }

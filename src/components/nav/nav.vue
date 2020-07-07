@@ -17,15 +17,40 @@
       }
     },
     mounted() {
-      this.$children.forEach(vm => {
-        if (vm.$options.name === 'ErNavItem') {
-          if (this.selected.indexOf(vm.name) !== -1) {
-            vm.selected = true;
-          } else {
-            vm.selected = false;
+      this.updateChildren();
+      this.listenToChildren();
+    },
+    updated() {
+      this.updateChildren();
+    },
+    methods: {
+      updateChildren() {
+        this.$children.forEach(vm => {
+          if (vm.$options.name === 'ErNavItem') {
+            if (this.selected.indexOf(vm.name) !== -1) {
+              vm.selected = true;
+            } else {
+              vm.selected = false;
+            }
           }
-        }
-      })
+        });
+      },
+      listenToChildren() {
+        this.$children.forEach(vm => {
+          vm.$on('add:selected', (navItemName) => {
+            if (this.multiple) {
+              let copySelected = JSON.parse(JSON.stringify(this.selected));
+              if (copySelected.indexOf(name) === -1) {
+                copySelected.push(navItemName);
+                this.$emit('update:selected', copySelected);
+              }
+            } else {
+              if (this.selected[0] === navItemName) return;
+              this.$emit('update:selected', [navItemName])
+            }
+          })
+        });
+      }
     }
   }
 </script>
