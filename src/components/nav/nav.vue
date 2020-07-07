@@ -9,6 +9,9 @@
     props: {
       selected: {
         type: Array
+      },
+      multiple: {
+        type: Boolean
       }
     }
   }
