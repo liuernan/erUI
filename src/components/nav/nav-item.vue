@@ -24,6 +24,9 @@
     border: 1px solid black;
     padding: .5em;
 
+    &:hover {
+      cursor: pointer;
+    }
     &.selected {
       background-color: red;
     }
