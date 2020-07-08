@@ -9,9 +9,14 @@
       </er-nav>
     </div>
     <div class="app-wrapper">
-      <er-nav :selected.sync="selected2" multiple>
+      <er-nav :selected.sync="selected2">
         <er-nav-item name="home">首页</er-nav-item>
-        <er-nav-item name="introduce">产品介绍</er-nav-item>
+        <er-sub-nav>
+          <template slot="title">产品介绍</template>
+          <er-nav-item name="products1">产品1</er-nav-item>
+          <er-nav-item name="products2">产品2</er-nav-item>
+          <er-nav-item name="products3">产品3</er-nav-item>
+        </er-sub-nav>
         <er-nav-item name="about">关于我们</er-nav-item>
         <er-nav-item name="contact">联系我们</er-nav-item>
       </er-nav>
@@ -50,5 +55,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  .app-wrapper {
+    width: 50%;
   }
 </style>
