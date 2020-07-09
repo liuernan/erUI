@@ -6,6 +6,7 @@
 <script>
   export default {
     name: 'ErNav',
+
     props: {
       selected: {
         type: Array,
@@ -16,27 +17,42 @@
         default: false
       }
     },
+
+    data() {
+      return {
+        navItems: []
+      }
+    },
+
+    provide() {
+      return {
+        rootVm: this
+      }
+    },
+
     mounted() {
       this.updateChildren();
       this.listenToChildren();
     },
+
     updated() {
       this.updateChildren();
     },
+
     methods: {
       updateChildren() {
-        this.$children.forEach(vm => {
-          if (vm.$options.name === 'ErNavItem') {
-            if (this.selected.indexOf(vm.name) !== -1) {
-              vm.selected = true;
-            } else {
-              vm.selected = false;
-            }
+        this.navItems.forEach(vm => {
+          if (this.selected.indexOf(vm.name) !== -1) {
+            vm.selected = true;
+          } else {
+            vm.selected = false;
           }
+
         });
       },
+
       listenToChildren() {
-        this.$children.forEach(vm => {
+        this.navItems.forEach(vm => {
           vm.$on('add:selected', (navItemName) => {
             if (this.multiple) {
               let copySelected = JSON.parse(JSON.stringify(this.selected));

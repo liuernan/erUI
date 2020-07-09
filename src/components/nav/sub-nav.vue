@@ -1,10 +1,41 @@
 <template>
-  <div>
-    <slot></slot>
+  <div class="er-sub-nav">
+    <div class="er-sub-nav-title" @click="clickTitle">
+      <slot name="title"></slot>
+    </div>
+    <div class="er-sub-nav-items" v-show="visible">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
   export default {
-    name: 'ErSubNav'
+    name: 'ErSubNav',
+    data() {
+      return {
+        visible: false
+      }
+    },
+    methods: {
+      clickTitle() {
+        this.visible = !this.visible
+      }
+    }
   }
 </script>
+<style lang="scss" scoped>
+  .er-sub-nav {
+    position: relative;
+
+    &-title {
+      border: 1px solid black;
+      padding: .5em;
+    }
+
+    &-items {
+      position: absolute;
+      white-space: nowrap;
+    }
+  }
+
+</style>

@@ -6,6 +6,7 @@
 <script>
   export default {
     name: 'ErNavItem',
+    inject: ['rootVm'],
     props: {
       name: {
         type: String,
@@ -16,6 +17,9 @@
       return {
         selected: false
       }
+    },
+    created() {
+      this.rootVm.navItems.push(this);
     },
     methods: {
       clickNavItem(){
