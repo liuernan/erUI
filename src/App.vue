@@ -45,7 +45,12 @@
           <template slot="title">联系我们</template>
           <er-sub-nav>
             <template slot="title">网络</template>
-            <er-nav-item name="qq">QQ</er-nav-item>
+            <er-sub-nav>
+              <template slot="title">QQ</template>
+              <er-nav-item name="qq1">1 号小姐姐 QQ 在线</er-nav-item>
+              <er-nav-item name="qq2">2 号小姐姐 QQ 在线</er-nav-item>
+              <er-nav-item name="qq3">3 号小姐姐 QQ 在线</er-nav-item>
+            </er-sub-nav>
             <er-nav-item name="wechat">微信</er-nav-item>
             <er-nav-item name="weibo">微博</er-nav-item>
           </er-sub-nav>

@@ -32,7 +32,7 @@
   .er-nav-item {
     border: 1px solid black;
     padding: .5em;
-    min-width: 4em;
+    min-width: 6em;
 
     &:hover {
       cursor: pointer;
