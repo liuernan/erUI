@@ -74,5 +74,6 @@
   .er-nav {
     display: flex;
     border: 1px solid red;
+    text-align: center;
   }
 </style>

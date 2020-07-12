@@ -30,11 +30,17 @@
     &-title {
       border: 1px solid black;
       padding: .5em;
+      min-width: 4em;
     }
 
     &-items {
       position: absolute;
       white-space: nowrap;
+    }
+
+    & & &-items {
+      left: 100%;
+      top: 0
     }
   }
 
