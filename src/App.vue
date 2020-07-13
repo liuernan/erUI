@@ -57,7 +57,12 @@
           <er-sub-nav>
             <template slot="title">电话</template>
             <er-nav-item name="tel">座机</er-nav-item>
-            <er-nav-item name="phone">手机</er-nav-item>
+            <er-sub-nav>
+              <template slot="title">手机</template>
+              <er-nav-item name="phone1">1 号小姐姐手机号</er-nav-item>
+              <er-nav-item name="phone2">2 号小姐姐手机号</er-nav-item>
+              <er-nav-item name="phone3">3 号小姐姐手机号</er-nav-item>
+            </er-sub-nav>
           </er-sub-nav>
         </er-sub-nav>
       </er-nav>

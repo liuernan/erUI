@@ -4,6 +4,8 @@ $border-color: #999;
 $border-color-light: lighten($border-color, 25%);
 $border-radius: 4px;
 $box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+$box-shadow-light: 0 0 3px rgba(0, 0, 0, .2);
+$box-shadow-dark: 0 0 3px rgba(0, 0, 0, .8);
 $button-active-bg: #eee;
 $button-bg: white;
 $button-height: 32px;

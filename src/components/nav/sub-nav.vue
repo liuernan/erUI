@@ -37,11 +37,15 @@
     &-items {
       position: absolute;
       white-space: nowrap;
+      box-shadow: $box-shadow-light;
+      margin-top: 4px;
     }
 
     & & &-items {
       left: 100%;
-      top: 0
+      top: 0;
+      margin-left: 4px;
+      margin-top: 0;
     }
   }
 
