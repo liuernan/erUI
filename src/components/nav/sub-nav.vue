@@ -1,5 +1,5 @@
 <template>
-  <div class="er-sub-nav">
+  <div class="er-sub-nav" v-click-outside="close">
     <div class="er-sub-nav-title" @click="clickTitle">
       <slot name="title"></slot>
     </div>
@@ -9,8 +9,11 @@
   </div>
 </template>
 <script>
+  import ClickOutside from '../click-outside'
+
   export default {
     name: 'ErSubNav',
+    directives: {ClickOutside},
     data() {
       return {
         visible: false
@@ -19,6 +22,9 @@
     methods: {
       clickTitle() {
         this.visible = !this.visible
+      },
+      close(){
+        this.visible = false;
       }
     }
   }
