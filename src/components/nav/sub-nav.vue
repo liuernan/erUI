@@ -24,11 +24,12 @@
   }
 </script>
 <style lang="scss" scoped>
+  @import "../../styles/var";
+
   .er-sub-nav {
     position: relative;
 
     &-title {
-      border: 1px solid black;
       padding: .5em;
       min-width: 6em;
     }

@@ -22,23 +22,34 @@
       this.rootVm.navItems.push(this);
     },
     methods: {
-      clickNavItem(){
+      clickNavItem() {
         this.$emit('add:selected', this.name);
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+  @import "../../styles/var";
+
   .er-nav-item {
-    border: 1px solid black;
     padding: .5em;
     min-width: 6em;
+    position: relative;
 
     &:hover {
       cursor: pointer;
     }
+
     &.selected {
-      background-color: red;
+      &::after {
+        content: '';
+        position: absolute;
+        border: 1px solid $blue;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+      }
+
     }
   }
 </style>

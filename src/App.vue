@@ -31,7 +31,7 @@
         <er-nav-item name="contact">联系我们</er-nav-item>
       </er-nav>
     </div>
-    <div class="app-wrapper">
+    <div class="app-wrapper" style="margin-top: 200px">
       <er-nav :selected.sync="selected4">
         <er-nav-item name="home">首页</er-nav-item>
         <er-sub-nav>
@@ -101,6 +101,6 @@
   }
 
   .app-wrapper {
-    width: 50%;
+    margin: 50px;
   }
 </style>
