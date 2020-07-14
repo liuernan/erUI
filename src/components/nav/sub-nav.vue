@@ -40,11 +40,19 @@
       min-width: 6em;
     }
 
+    & .er-nav-item {
+      background: $white;
+    }
+
     &-items {
       position: absolute;
       white-space: nowrap;
       box-shadow: $box-shadow-light;
       margin-top: 4px;
+
+      & .er-sub-nav-title {
+        background: $white;
+      }
     }
 
     & & &-items {
