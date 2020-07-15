@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    TODO: 点击子菜单的 item 后关闭整个 sub-nav
     <div class="app-wrapper">
       <er-nav :selected.sync="selected">
         <er-nav-item name="home">首页</er-nav-item>
